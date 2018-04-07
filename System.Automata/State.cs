@@ -2,7 +2,7 @@
 	/// <summary>
 	/// A automaton state.
 	/// </summary>
-	public struct State {
+	public class State {
 		
 		/// <summary>
 		/// The Turing halting accept state.
@@ -37,5 +37,20 @@
 		}
 
 		public override string ToString() => Name;
+
+		public override bool Equals(object obj) {
+			if(obj == null) return false;
+			return obj.GetType() == typeof(State) && Equals((State)obj);
+		}
+
+		public bool Equals(State s) {
+			if(s.Name != Name) return false;
+			if(s.Accepting != Accepting) return false;
+			return true;
+		}
+
+		public override int GetHashCode() {
+			return Name.GetHashCode();
+		}
 	}
 }

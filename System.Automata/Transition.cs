@@ -1,8 +1,10 @@
-﻿namespace System.Automata {
+﻿using System;
+
+namespace System.Automata {
 	/// <summary>
 	/// A state transition
 	/// </summary>
-	public struct Transition {
+	public class Transition {
 		/// <summary>
 		/// The current state.
 		/// </summary>
@@ -16,14 +18,14 @@
 		/// <summary>
 		/// The symbol to transition on
 		/// </summary>
-		public char? A { get; }
+		public char A { get; }
 		
 
 		/// <param name="p">The current state</param>
 		/// <param name="c">The current input symbol</param>
 		/// <param name="q">The next state</param>
 		/// <remarks>For a epsilon-transition, use Alphabet.<see cref="Alphabet.EmptyString" /></remarks>
-		public Transition(State p, char? c, State q) {
+		public Transition(State p, char c, State q) {
 			P = p;
 			A = c;
 			Q = q;

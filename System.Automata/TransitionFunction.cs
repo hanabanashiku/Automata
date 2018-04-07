@@ -30,10 +30,10 @@ namespace System.Automata {
 
 		public int Count => _trans.Count;
 
-		public Transition? Get(State p, char? s) {
+		public State Get(State p, char s) {
 			if(!_trans.Exists(x => Equals(x.P, p) && Equals(x.A, s)))
 				return null;
-			return _trans.First(x => Equals(x.P, p) && Equals(x.A, s));
+			return _trans.First(x => x.P.Equals(p) && x.A == s).Q;
 		}
 
 		public IEnumerator<Transition> GetEnumerator() {

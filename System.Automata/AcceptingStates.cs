@@ -6,8 +6,9 @@
 	public class AcceptingStates : States {
 		/// <inheritdoc />
 		public AcceptingStates(params State[] q) : base(q) {
-			for(var i = 0; i < q.Length; i++)
-				q[i].Accepting = true;
+			foreach(var p in q)
+				p.Accepting = true;
+			
 		}
 	}
 }

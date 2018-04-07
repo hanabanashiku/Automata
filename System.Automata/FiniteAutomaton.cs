@@ -7,11 +7,6 @@
 		/// The set of accepting states.
 		/// </summary>
 		public AcceptingStates AcceptingStates { get; }
-		
-		/// <summary>
-		/// The state transition mappings
-		/// </summary>
-		public TransitionFunction Transitions { get; }
 
 		public FiniteAutomaton(States q, Alphabet a, TransitionFunction d, State q0, AcceptingStates f) {
 			States = q;
@@ -39,28 +34,24 @@
 		/// </summary>
 		/// <param name="x">The input string.</param>
 		/// <returns>True if the machine accepts the input string.</returns>
-		public bool Run(char?[] x) {
-			Running = true;
+		public bool Run(char[] x) {
 			var i = 0;
-			CurrentState = InitialState;
+			var current = InitialState;
 
 			while(i < x.Length) {
-				if(!Alphabet.Contains(x[i])) {
-					Running = false;
+				if(!Alphabet.Contains(x[i]))
 					return false;
-				}
 				if(x[i] == Alphabet.EmptyString) {
 					i++;
 					continue;
 				}
-				var t = Transitions.Get(CurrentState, x[i]);
-				if(t == null)
+				var q = Transitions.Get(current, x[i]);
+				if(q == null)
 					return false;
-				CurrentState = ((Transition)t).Q;
+				current = q;
 				i++;
 			}
-			Running = false;
-			return CurrentState.Accepting;
+			return current.Accepting;
 		}
 
 		/// <summary>
@@ -69,10 +60,7 @@
 		/// <param name="x">The input string.</param>
 		/// <returns>True if the machine accepts the input string.</returns>
 		public bool Run(string x) {
-			var input = new char?[x.Length];
-			for(var i = 0; i < x.Length; i++)
-				input[i] = x[i];
-			return Run(input);
+			return Run(x.ToCharArray());
 		}
 
 	}
