@@ -1,13 +1,9 @@
-//
-// Created by maclm01 on 11/04/18.
-//
-
 #ifndef AUTOMATA_STATES_H
 #define AUTOMATA_STATES_H
 
-#include<string>
 #include<vector>
 #include<stdexcept>
+#include<iterator>
 
 #include "State.h"
 
@@ -18,11 +14,17 @@ namespace Automata{
     public:
         void add(State *s);
         bool contains(const State *s);
+        size_t size();
+        bool empty();
         State* operator [](const int& i);
+        States() = default;
         explicit States(State* states[]);
         explicit States(const int& n);
+        __wrap_iter<vector<Automata::State *, std::__1::allocator<Automata::State *>>::pointer> begin();
+        __wrap_iter<vector<Automata::State *, std::__1::allocator<Automata::State *>>::pointer> end();
+      explicit operator string();
 
-    private:
+    protected:
         vector<State*> _states;
     };
 }
