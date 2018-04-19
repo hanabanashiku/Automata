@@ -18,7 +18,7 @@ namespace Automata{
         bool empty();
         State* operator [](const int& i);
         States() = default;
-        explicit States(State* states[]);
+        explicit States(State* states[], size_t size);
         explicit States(const int& n);
         __wrap_iter<vector<Automata::State *, std::__1::allocator<Automata::State *>>::pointer> begin();
         __wrap_iter<vector<Automata::State *, std::__1::allocator<Automata::State *>>::pointer> end();

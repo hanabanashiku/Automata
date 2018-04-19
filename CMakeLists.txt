@@ -4,6 +4,7 @@ project(Automata)
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(src)
+include_directories(tests)
 
 add_executable(Automata
         src/AcceptingStates.cpp

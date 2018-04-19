@@ -16,7 +16,7 @@ namespace Automata{
 	 public:
 	  AcceptingStates* getAcceptingStates();
 	  FiniteAutomaton(States* q, Alphabet* a, TransitionFunction* d, State* q0, AcceptingStates* f);
-	  bool run(char x[]);
+	  bool run(char x[], size_t size);
 	  bool run(string x);
 
 	 protected:

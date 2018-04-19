@@ -6,7 +6,7 @@
 #include "State.h"
 #include "States.h"
 #include "Alphabet.h"
-#include "TransitionFunction.h
+#include "TransitionFunction.h"
 
 namespace Automata{
 	class Automaton{

@@ -14,7 +14,7 @@ namespace Automata{
 	  char getSymbol();
 	  Transition(State* p, State* q, char s);
 	  explicit operator string();
-	  explicit bool operator ==(Transition* a, Transition* b);
+	  bool operator ==(Transition* a);
 
 	 private:
 	  State* _p;

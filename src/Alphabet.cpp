@@ -21,10 +21,10 @@ namespace Automata{
 		return _symbols.empty();
 	}
 
-	explicit Alphabet::Alphabet(char* s[]) {
-		for(int i = 0; i < sizeof(s); i++)
-			if(!contains(*s[i]) && s != EMPTY_STRING)
-				_symbols.push_back(*s[i]);
+	Alphabet::Alphabet(char s[], size_t size) {
+		for(int i = 0; i < size; i++)
+			if(!contains(s[i]) && s[i] != EMPTY_STRING)
+				_symbols.push_back(s[i]);
 	}
 
 	Alphabet::operator string(){
@@ -43,23 +43,23 @@ namespace Automata{
 		return _symbols.end();
 	}
 
-	Alphabet Alphabet::operator+(Automata::Alphabet *a, Automata::Alphabet *b) {
+	Alphabet Alphabet::operator+(Alphabet *a) {
 		Alphabet ret;
 
-		for(auto s : *a)
+		for(auto s : *this)
 			ret.add(s);
 
-		for(auto s : *b)
+		for(auto s : *a)
 			if(!ret.contains(s))
 				ret.add(s);
 		return ret;
 	}
 
-	Alphabet Alphabet::operator-(Automata::Alphabet *a, Automata::Alphabet *b) {
+	Alphabet Alphabet::operator-(Alphabet *a) {
 		Alphabet ret;
 
-		for(auto s : *a)
-			if(!b->contains(s))
+		for(auto s : *this)
+			if(!a->contains(s))
 				ret.add(s);
 		return ret;
 	}

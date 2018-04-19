@@ -16,8 +16,8 @@ namespace Automata{
 	  State* getNext(State* p, char s);
 	  size_t size();
 	  bool empty();
-	  explicit TransitionFunction(Transition* t[]);
-	  explicit Transition* operator[](int i);
+	  explicit TransitionFunction(Transition* t[], size_t size);
+	  Transition* operator[](int i);
 	  TransitionFunction() = default;
 	  __wrap_iter<vector<Transition*, std::__1::allocator<Transition* >>::pointer> begin();
 	  __wrap_iter<vector<Transition*, std::__1::allocator<Transition* >>::pointer> end();

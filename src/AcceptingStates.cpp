@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace Automata{
-	AcceptingStates::AcceptingStates(State* states[]) : States(states){
+	AcceptingStates::AcceptingStates(State* states[], size_t size) : States(states, size){
 		for(auto s : _states)
 			s->setAccepting(true);
 	}

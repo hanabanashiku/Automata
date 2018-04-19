@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/Ma
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/Michael/Projects/Automata/src 
+CXX_INCLUDES = -I/Users/Michael/Projects/Automata/src -I/Users/Michael/Projects/Automata/tests 
 

@@ -28,10 +28,10 @@ namespace Automata {
 		return ret.str();
 	}
 
-	bool Transition::operator==(Automata::Transition *a, Automata::Transition *b) {
-		if(a == b) return true;
-		return a->getCurrent() == b->getCurrent()
-		       && a->getNext() == b->getNext()
-		       && a->getSymbol() == b->getSymbol();
+	bool Transition::operator==(Transition* a) {
+		if(a == this) return true;
+		return a->getCurrent() == this->getCurrent()
+		       && a->getNext() == this->getNext()
+		       && a->getSymbol() == this->getSymbol();
 	}
 }

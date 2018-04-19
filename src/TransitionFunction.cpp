@@ -27,8 +27,8 @@ namespace Automata{
 		return _trans.empty();
 	}
 
-	TransitionFunction::TransitionFunction(Transition* t[]) {
-		for(int i = 0; i < sizeof(t); i++)
+	TransitionFunction::TransitionFunction(Transition* t[], size_t size) {
+		for(int i = 0; i < size; i++)
 			if(!contains(t[i]))
 				_trans.push_back(t[i]);
 	}

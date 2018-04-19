@@ -21,11 +21,11 @@ namespace Automata{
         _name = "q" + to_string(id);
     }
 
-    bool State::operator==(State a, State b){
-        return a.getName() == b.getName();
+    bool State::operator==(State a){
+        return a.getName() == this->getName();
     }
 
-    bool State::operator==(Automata::State *a, Automata::State *b) {
-        return a == b || a->getName() == b->getName();
+    bool State::operator==(State *a) {
+        return a == this || a->getName() == this->getName();
     }
 }

@@ -12,7 +12,7 @@
 using namespace std;
 
 namespace Automata{
-	const EMPTY_STRING = '\0';
+	const char EMPTY_STRING = '\0';
 
 	class Alphabet {
 	 public:
@@ -22,12 +22,12 @@ namespace Automata{
 	  size_t size();
 	  bool empty();
 	  Alphabet() = default;
-	  explicit Alphabet(char* s[]);
+	  explicit Alphabet(char s[], size_t size);
 	  explicit operator string();
 	  __wrap_iter<vector<char, std::__1::allocator<char >>::pointer> begin();
 	  __wrap_iter<vector<char, std::__1::allocator<char >>::pointer> end();
-	  Alphabet operator +(Alphabet* a, Alphabet* b);
-	  Alphabet operator -(Alphabet* a, Alphabet* b);
+	  Alphabet operator +(Alphabet* a);
+	  Alphabet operator -(Alphabet* a);
 
 	 protected:
 	  vector<char> _symbols;

@@ -35,8 +35,8 @@ namespace Automata{
         }
     }
 
-    States::States(State *states[]) {
-        for(size_t i = 0; i < sizeof(states); i++)
+    States::States(State* states[], size_t size) {
+        for(size_t i = 0; i < size; i++)
             if(!contains(states[i]))
                 _states.push_back(states[i]);
     }
@@ -50,10 +50,10 @@ namespace Automata{
     }
     States::operator string () {
         if(_states.empty()) return "{ }";
-        string ret = "{ " + to_string(*_states[0]);
+        string ret = "{ " + _states[0]->getName();
 
         for(int i = 1; i < _states.size(); i++)
-            ret += ", " + to_string(*_states[i]);
+            ret += ", " + _states[i]->getName();
 
         return ret + " }";
     }

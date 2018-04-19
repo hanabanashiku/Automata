@@ -4,9 +4,9 @@
 #include "States.h"
 
 namespace Automata{
-	class AcceptingStates : States{
+	class AcceptingStates : public States{
 	 public:
-	  explicit AcceptingStates (State* states[]);
+	  explicit AcceptingStates (State* states[], size_t size);
 	};
 }
 

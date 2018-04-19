@@ -21,19 +21,19 @@ namespace Automata{
 				throw invalid_argument("The accepting state " + (*i)->getName() + " is not in the set of states!");
 		for(int i = 0; i < _tf->size(); i++){
 			Transition* t = (*_tf)[i];
-			if(t == EMPTY_STRING)
+			if(t->getSymbol() == EMPTY_STRING)
 				throw invalid_argument("Null transitions are not allowed!");
 			if(!_states->contains(t->getCurrent()) || !_states->contains(t->getNext()))
-				throw invalid_argument("The transition " + *t + " contains a state that is not in the set of states!");
+				throw invalid_argument("A transition contains a state that is not in the set of states!");
 			if(!_alphabet->contains(t->getSymbol()))
 				throw invalid_argument("Invalid symbol '" + to_string(t->getSymbol()) + "' encountered.");
 		}
 	}
 
-	bool FiniteAutomaton::run(char x[]) {
+	bool FiniteAutomaton::run(char x[], size_t size) {
 		State* current = _q0;
 
-		for(int i = 0; i < sizeof(x); i++){
+		for(int i = 0; i < size; i++){
 			if(_alphabet->contains(x[i]))
 				return false;
 
@@ -51,6 +51,6 @@ namespace Automata{
 
 	bool FiniteAutomaton::run(string x){
 		char* input = &x[0];
-		return run(input);
+		return run(input, x.size());
 	}
 }
