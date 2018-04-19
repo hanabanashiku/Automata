@@ -22,13 +22,11 @@
 			foreach(var s in AcceptingStates)
 				if(!States.Contains(s))
 					throw new ArgumentException($"The accepting state {s} does not exist in the set of states!");
-			if(Transitions.Exists(x => x.A == Alphabet.EmptyString))
-				throw new ArgumentException("Null transitions are not allowed!");
 			foreach(var t in Transitions)
-				if(!States.Contains(t.P) || !States.Contains(t.Q) || !Alphabet.Contains(t.A))
+				if(!States.Contains(t.P) || !States.Contains(t.Q) || (t.A != Alphabet.EmptyString && !Alphabet.Contains(t.A)))
 					throw new ArgumentException($"Invalid transition {t}");
 		}
-
+		
 		/// <summary>
 		/// Run the machine using the given input.
 		/// </summary>
@@ -45,7 +43,7 @@
 					i++;
 					continue;
 				}
-				var q = Transitions.Get(current, x[i]);
+				var q = Transitions[current, x[i]];
 				if(q == null)
 					return false;
 				current = q;

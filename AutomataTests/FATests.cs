@@ -1,4 +1,3 @@
-﻿using System;
 using NUnit.Framework;
 using System.Automata;
 
@@ -21,9 +20,9 @@ namespace AutomataTests {
 				new Transition(q[1], '1', q[2]),
 				new Transition(q[2], '1', q[0])
 			};
-			Assert.AreEqual(tf.Get(q[0], '1'), q[1]);
-			Assert.AreEqual(tf.Get(q[1], '1'), q[2]);
-			Assert.AreEqual(tf.Get(q[2], '1'), q[0]);
+			Assert.AreEqual(tf[q[0], '1'], q[1]);
+			Assert.AreEqual(tf[q[1], '1'], q[2]);
+			Assert.AreEqual(tf[q[2], '1'], q[0]);
 		}
 		
 		[Test]

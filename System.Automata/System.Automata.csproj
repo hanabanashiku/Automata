@@ -43,6 +43,8 @@
     <Compile Include="Alphabet.cs" />
     <Compile Include="FiniteAutomaton.cs" />
     <Compile Include="Automaton.cs" />
+    <Compile Include="NondeterministicFiniteAutomaton.cs" />
+    <Compile Include="NondeterministicTransitionFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PushdownAutomaton.cs" />
     <Compile Include="PushdownTransition.cs" />
