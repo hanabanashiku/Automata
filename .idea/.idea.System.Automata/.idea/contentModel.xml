@@ -9,6 +9,7 @@
         <e p="FATests.cs" t="Include" />
         <e p="NFATests.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="PDATests.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
