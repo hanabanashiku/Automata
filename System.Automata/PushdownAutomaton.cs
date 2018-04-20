@@ -44,11 +44,16 @@ namespace System.Automata {
 			foreach(var s in AcceptingStates)
 				if(!States.Contains(s))
 					throw new ArgumentException($"The accepting state {s} is not in the set of states!");
-			
+
 			foreach(var t in Transitions) {
-				if(!States.Contains(t.P) || !States.Contains(t.Q) || !Alphabet.Contains(t.A) || !StackAlphabet.Contains(t.Top)
-				   || Array.Exists(t.Replace, x => !StackAlphabet.Contains(x)))
+				if(!States.Contains(t.P) || !States.Contains(t.Q) 
+				                         || (!Alphabet.Contains(t.A) && t.A != Alphabet.EmptyString) || 
+				   (!StackAlphabet.Contains(t.Top) && t.Top != Alphabet.Wildcard && t.Top != Alphabet.EmptyString))
 					throw new ArgumentException($"Invalid transition {t}");
+				if(t.Replace.Length == 1 && ((t.Replace[0] != Alphabet.Wildcard && t.Replace[0] != Alphabet.EmptyString) && !StackAlphabet.Contains(t.Replace[0])))
+					throw new ArgumentException($"Invalid replace char for transition {t}");
+				if(t.Replace.Length > 1 && Array.Exists(t.Replace, x => !StackAlphabet.Contains(x)))
+					throw new ArgumentException($"Invalid replace char sequence for transition {t}");
 			}
 		}
 
