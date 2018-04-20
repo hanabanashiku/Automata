@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace System.Automata {
 	/// <summary>
-	/// A deterministic collection of  state transition mappings.
+	/// A deterministic collection of state transition mappings.
 	/// </summary>
 	public class TransitionFunction : IEnumerable<Transition> {
 		protected List<Transition> Trans;
@@ -15,6 +15,13 @@ namespace System.Automata {
 				Add(tr);
 		}
 
+		/// <summary>
+		/// Add a transition to the function
+		/// </summary>
+		/// <param name="t">The transition to add</param>
+		/// <exception cref="NullReferenceException">If a transition has a null state</exception>
+		/// <exception cref="ArgumentException">If a null transition (using EmptyString) was added</exception>
+		/// <remarks>Not thread safe! Do not use after adding the function to an automaton.</remarks>
 		public void Add(Transition t) {
 			if(t.P == null || t.Q == null)
 				throw new NullReferenceException("Null state not allowed!");
@@ -37,12 +44,17 @@ namespace System.Automata {
 
 		public int Count => Trans.Count;
 
-		public State this[State p, char s] => Get(p, s);
+		/// <summary>
+		/// Get the next state Transition
+		/// </summary>
+		/// <param name="p">The current state</param>
+		/// <param name="s">The current input character</param>
+		public Transition this[State p, char s] => Get(p, s);
 		
-		private State Get(State p, char s) {
+		private Transition Get(State p, char s) {
 			if(!Trans.Exists(x => Equals(x.P, p) && Equals(x.A, s)))
 				return null;
-			return Trans.First(x => x.P.Equals(p) && x.A == s).Q;
+			return Trans.First(x => x.P.Equals(p) && x.A == s);
 		}
 
 		public IEnumerator<Transition> GetEnumerator() {

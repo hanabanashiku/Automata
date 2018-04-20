@@ -9,7 +9,19 @@ namespace System.Automata {
 	public class Alphabet : IEnumerable<char> {
 		protected List<char> Chars;
 
+		/// <summary>
+		/// Represents a string of length 0
+		/// </summary>
 		public const char EmptyString = '\0';
+		/// <summary>
+		/// Represents the initial symbol on the stack.
+		/// </summary>
+		public const char Z = (char)3;
+
+		/// <summary>
+		/// Represents a wildcard (?) symbol when replacing stack contents.
+		/// </summary>
+		public const char Wildcard = (char)26;
 
 		/// <summary> {1} </summary>
 		public static Alphabet Unary => new Alphabet('1');

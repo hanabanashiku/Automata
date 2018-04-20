@@ -28,6 +28,7 @@
         </e>
         <e p="PushdownAutomaton.cs" t="Include" />
         <e p="PushdownTransition.cs" t="Include" />
+        <e p="PushdownTransitionFunction.cs" t="Include" />
         <e p="StackAlphabet.cs" t="Include" />
         <e p="State.cs" t="Include" />
         <e p="States.cs" t="Include" />

@@ -46,7 +46,7 @@
 				var q = Transitions[current, x[i]];
 				if(q == null)
 					return false;
-				current = q;
+				current = q.Q;
 				i++;
 			}
 			return current.Accepting;

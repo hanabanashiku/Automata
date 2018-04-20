@@ -5,10 +5,6 @@ namespace System.Automata {
 	/// An alphabet for use with a pushdown stack
 	/// </summary>
 	public class StackAlphabet : Alphabet {
-		/// <summary>
-		/// The initial stack symbol
-		/// </summary>
-		public const char Z = (char)2;
 
 		public StackAlphabet(Alphabet a, params char[] c) {
 			Chars = new List<char>();
