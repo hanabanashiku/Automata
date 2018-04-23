@@ -44,7 +44,7 @@
   <ItemGroup>
     <Compile Include="FATests.cs" />
     <Compile Include="NFATests.cs" />
-    <Compile Include="PDATests.cs" />
+    <Compile Include="PdaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
