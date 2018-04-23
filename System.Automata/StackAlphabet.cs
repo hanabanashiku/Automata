@@ -9,7 +9,7 @@ namespace System.Automata {
 		public StackAlphabet(Alphabet a, params char[] c) {
 			Chars = new List<char>();
 			Chars.AddRange(a);
-			if(a.GetType() != typeof(StackAlphabet)) Chars.Add(Z);
+			if(!Contains(Z)) Chars.Add(Z);
 			
 			foreach(var s in c)
 				if(!Chars.Contains(s) && s != EmptyString && s != Z)

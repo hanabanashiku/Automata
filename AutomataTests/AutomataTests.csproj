@@ -46,6 +46,7 @@
     <Compile Include="NFATests.cs" />
     <Compile Include="PdaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TmTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\System.Automata\System.Automata.csproj">

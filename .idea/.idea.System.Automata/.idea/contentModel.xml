@@ -11,6 +11,7 @@
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
+        <e p="TmTests.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
       </e>
@@ -31,8 +32,12 @@
         <e p="State.cs" t="Include" />
         <e p="States.cs" t="Include" />
         <e p="System.Automata.csproj" t="IncludeRecursive" />
+        <e p="TapeAlphabet.cs" t="Include" />
         <e p="Transition.cs" t="Include" />
         <e p="TransitionFunction.cs" t="Include" />
+        <e p="TuringMachine.cs" t="Include" />
+        <e p="TuringTransition.cs" t="Include" />
+        <e p="TuringTransitionFunction.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
       </e>

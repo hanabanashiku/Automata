@@ -7,6 +7,10 @@
 		public States States { get; protected set; }
 		
 		/// <summary>
+		/// The set of accepting states.
+		/// </summary>
+		public AcceptingStates AcceptingStates { get; protected set; }
+		/// <summary>
 		/// The machine's alphabet.
 		/// </summary>
 		public Alphabet Alphabet { get; protected set; }

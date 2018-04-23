@@ -11,11 +11,6 @@ namespace System.Automata {
 		/// The stack alphabet.
 		/// </summary>
 		public StackAlphabet StackAlphabet { get; }
-
-		/// <summary>
-		/// The set of accepting states.
-		/// </summary>
-		public AcceptingStates AcceptingStates { get; }
 		
 		/// <summary>
 		/// The transition function

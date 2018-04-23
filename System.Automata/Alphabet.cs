@@ -19,6 +19,11 @@ namespace System.Automata {
 		public const char Z = (char)3;
 
 		/// <summary>
+		/// Represents a blank symbol on a Turing tape.
+		/// </summary>
+		public const char Blank = (char)127;
+
+		/// <summary>
 		/// Represents a wildcard (?) symbol when replacing stack contents.
 		/// </summary>
 		public const char Wildcard = (char)26;

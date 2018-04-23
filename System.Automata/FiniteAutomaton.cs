@@ -3,11 +3,7 @@
 	/// A deterministic Finite Automaton
 	/// </summary>
 	public class FiniteAutomaton : Automaton {
-		/// <summary>
-		/// The set of accepting states.
-		/// </summary>
-		public AcceptingStates AcceptingStates { get; }
-
+		
 		public FiniteAutomaton(States q, Alphabet a, TransitionFunction d, State q0, AcceptingStates f) {
 			States = q;
 			Alphabet = a;
