@@ -1,4 +1,5 @@
-﻿using System.Automata;
+﻿using System;
+using System.Automata;
 using NUnit.Framework;
 
 namespace AutomataTests {
@@ -59,6 +60,75 @@ namespace AutomataTests {
             Assert.False(m.Run("abb"));
             Assert.False(m.Run("a"));
             Assert.False(m.Run("b"));
+        }
+
+        [Test]
+        public void StringEncodingTest() {
+            const char b = Alphabet.Blank;
+            string original;
+            string encoding;
+
+            original = "";
+            encoding = $"{b}";
+            Assert.AreEqual(TuringMachine.BinEncode(original), encoding);
+
+            original = "a";
+            encoding = $"1100001{b}";
+            Assert.AreEqual(TuringMachine.BinEncode(original), encoding);
+
+            original = "aba";
+            encoding = $"1100001{b}1100010{b}1100001{b}";
+            Assert.AreEqual(TuringMachine.BinEncode(original), encoding);
+        }
+
+        [Test]
+        public void UnaryEncodingTest() {
+            Assert.AreEqual(TuringMachine.UnaryEncode(0), "");
+            Assert.AreEqual(TuringMachine.UnaryEncode(1), "1");
+            Assert.AreEqual(TuringMachine.UnaryEncode(5), "11111");
+        }
+
+        [Test]
+        public void MoveEncodeTest() {
+            const char b = Alphabet.Blank;
+            var q = new States(2);
+            
+            var t = new TuringTransition(q[0], 'a', q[1], 'b', TuringMachine.Direction.R);
+            var e = $"10{b}1100001{b}11{b}1100010{b}01{b}";
+            
+            Assert.AreEqual(TuringMachine.BinEncode(t, q), e);
+            
+            t = new TuringTransition(q[0], 'a', new State("q2"), 'b', TuringMachine.Direction.L );
+            try {
+                TuringMachine.BinEncode(t, q);
+                Assert.Fail();
+            }
+            catch(Exception) {
+                // ignored
+            }
+        }
+
+        [Test]
+        public void MachineEncodeTest() {
+            const char b = Alphabet.Blank;
+
+            var q = new States(3);
+            var tf = new TuringTransitionFunction() {
+                new TuringTransition(q[0], b, q[1], b, TuringMachine.Direction.R),
+                new TuringTransition(q[1], 'b', q[1], 'b', TuringMachine.Direction.R),
+                new TuringTransition(q[1], 'a', q[2], 'b', TuringMachine.Direction.L),
+                new TuringTransition(q[1], b, q[2], b, TuringMachine.Direction.L),
+                new TuringTransition(q[2], 'b', q[2], 'b', TuringMachine.Direction.L),
+                new TuringTransition(q[2], b, State.Ha, b, TuringMachine.Direction.S)
+            };
+            
+            var t = new TuringMachine(q, Alphabet.Ab, new TapeAlphabet(Alphabet.Ab), tf, q[0]);
+
+            var e = $"{b}";
+            foreach(var m in tf)
+                e += TuringMachine.BinEncode(m, t.States) + b;
+            
+            Assert.AreEqual(TuringMachine.BinEncode(t), e);
         }
     }
 }

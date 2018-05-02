@@ -157,7 +157,13 @@ namespace System.Automata {
         /// <param name="x">The string to encode</param>
         /// <returns>A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.</returns>
         public static string BinEncode(char[] x) {
+            if(x.Length == 0) return $"{Alphabet.Blank}";
             return x.Aggregate("", (current, c) => current + (BinEncode(c) + Alphabet.Blank));
+        }
+        /// <param name="x">The string to encode</param>
+        /// <returns>A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.</returns>
+        public static string BinEncode(string x) {
+            return BinEncode(x.ToCharArray());
         }
 
         /// <param name="n">The number to encode</param>
@@ -204,20 +210,17 @@ namespace System.Automata {
         /// A string ∈ {0, 1, Δ}* representing a turing transition
         /// 𝛿(p, σ) = (q, τ, D) where p,q ∈ S, σ,τ ∈ Σ
         /// in the form
-        /// n(indexof(p))Δn(σ)Δn(indexof(q))Δn(τ)Δn(D)
+        /// n(indexof(p))Δn(σ)Δn(indexof(q))Δn(τ)Δn(D)Δ
         /// where n(x) reperesents the binary integer or UTF representation of x.
         /// n(D) = { L->00, R->01, S->10, err->11 }
         /// </returns>
         /// <exception cref="ArgumentException">If a state referenced is not contained in s</exception>
         public static string BinEncode(TuringTransition t, States s) {
             string d;
-            
-            if(!s.Contains(t.P) || !s.Contains(t.Q))
-                throw new ArgumentException("The states must be in the set of states");
     
             // get the binary representation of the state index
-            var p = BinEncode(s.Select(((state, i) => new {state, i})).First(x => x.state.Equals(t.P)).i); // current state
-            var q = BinEncode(s.Select(((state, i) => new {state, i})).First(x => x.state.Equals(t.Q)).i); // next state
+            var p = EncodeState(t.P, s); // current state
+            var q = EncodeState(t.Q, s); // next state
             var sigma = BinEncode(t.A); // current tape symbol
             var tao = BinEncode(t.B); // new tape symbol
             switch(t.Direction) { // the direction
@@ -236,6 +239,17 @@ namespace System.Automata {
             }
 
             return $"{p}{Alphabet.Blank}{sigma}{Alphabet.Blank}{q}{Alphabet.Blank}{tao}{Alphabet.Blank}{d}{Alphabet.Blank}";
+        }
+
+        private static string EncodeState(State p, States s) {
+            if(!s.Contains(p) && !p.Equals(State.Ha) && !p.Equals(State.Hr))
+                throw new ArgumentException("The state must exist in the set of states!");
+            
+            if(p.Equals(State.Ha))
+                return "0";
+            if(p.Equals(State.Hr))
+                return "1";
+            return BinEncode(s.Select(((state, i) => new {state, i})).First(x => x.state.Equals(p)).i + 2);
         }
     }
 }
