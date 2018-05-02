@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace System.Automata {
@@ -31,13 +32,13 @@ namespace System.Automata {
 
         public new static readonly AcceptingStates AcceptingStates = new AcceptingStates(State.Ha);
 
-        public new TuringTransitionFunction TransitionFunction { get; }
+        public new TuringTransitionFunction Transitions { get; }
         
         public TuringMachine(States q, Alphabet a, TapeAlphabet g, TuringTransitionFunction tf, State q0) {
             States = q;
             Alphabet = a;
             TapeAlphabet = g;
-            TransitionFunction = tf;
+            Transitions = tf;
             InitialState = q0;
             
             if(States.Count == 0)
@@ -45,7 +46,7 @@ namespace System.Automata {
             if(!States.Contains(InitialState))
                 throw new ArgumentException("The initial state must be in the set of states!");
 
-            foreach (var t in TransitionFunction) {
+            foreach (var t in Transitions) {
                if((!States.Contains(t.P) && !t.P.Equals(State.Ha) && !t.P.Equals(State.Hr)) 
                   || (!States.Contains(t.Q) && !t.Q.Equals(State.Ha) && !t.Q.Equals(State.Hr)) || !TapeAlphabet.Contains(t.A) 
                   || !TapeAlphabet.Contains(t.B))
@@ -69,7 +70,13 @@ namespace System.Automata {
                     continue;
                 tape.Add(c);
             }
-            return Run(tape, InitialState, 0).Result;
+
+            try {
+                return Run(tape, InitialState, 0).Result;
+            }
+            catch(StackOverflowException) {
+                return false; // infinite loop, reject
+            }
         }
 
         public bool Run(string x) {
@@ -91,7 +98,7 @@ namespace System.Automata {
                     return false;
                 
                 // get possible moves
-                var tr = TransitionFunction[q, tape[i]];
+                var tr = Transitions[q, tape[i]];
 
                 if (tr.Length == 0)
                     q = State.Hr;
@@ -132,6 +139,103 @@ namespace System.Automata {
                 default:
                     throw new ArgumentOutOfRangeException(nameof(d), d, null);
             }
+        }
+
+        /// <param name="x">The number to encode</param>
+        /// <returns>The integer as a binary number</returns>
+        /// <remarks>32-bits with two's complement for negatives, without leading 0s</remarks>
+        public static string BinEncode(int x) {
+            return Convert.ToString(x, 2);
+        }
+
+        /// <param name="x">The character to encode</param>
+        /// <returns>The character as an ASCII binary number without leading 0s</returns>
+        public static string BinEncode(char x) {
+            return BinEncode((int)x);
+        }
+
+        /// <param name="x">The string to encode</param>
+        /// <returns>A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.</returns>
+        public static string BinEncode(char[] x) {
+            return x.Aggregate("", (current, c) => current + (BinEncode(c) + Alphabet.Blank));
+        }
+
+        /// <param name="n">The number to encode</param>
+        /// <returns>The number n returned as the string 1^n</returns>
+        public static string UnaryEncode(uint n) {
+            var result = "";
+
+            while(n > 0) {
+                result += "1";
+                n--;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Encode a turing machine
+        /// </summary>
+        /// <param name="t">The turing machine to encode</param>
+        /// <param name="x">The input to encode</param>
+        /// <returns>
+        /// A string ∈ {0, 1, Δ}* representing a turing machine in the form
+        /// Δe(m0)Δe(m1)Δ..Δe(mk)Δe(x)
+        /// Where mk is a transition and e is the binary encoding function.
+        /// </returns>
+        /// <remarks>See BinEncode(TuringTransition) and BinEncode(char[]) for specific encodings.</remarks>
+        public static string BinEncode(TuringMachine t, char[] x = null) {
+            var result = $"{Alphabet.Blank}";
+
+            foreach(var tr in t.Transitions)
+                result += BinEncode(tr, t.States) + Alphabet.Blank;
+
+            if(x != null)
+                result += BinEncode(x);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Encode a turing machine move 
+        /// </summary>
+        /// <param name="t">The transition</param>
+        /// <param name="s">The set of states</param>
+        /// <returns>
+        /// A string ∈ {0, 1, Δ}* representing a turing transition
+        /// 𝛿(p, σ) = (q, τ, D) where p,q ∈ S, σ,τ ∈ Σ
+        /// in the form
+        /// n(indexof(p))Δn(σ)Δn(indexof(q))Δn(τ)Δn(D)
+        /// where n(x) reperesents the binary integer or UTF representation of x.
+        /// n(D) = { L->00, R->01, S->10, err->11 }
+        /// </returns>
+        /// <exception cref="ArgumentException">If a state referenced is not contained in s</exception>
+        public static string BinEncode(TuringTransition t, States s) {
+            string d;
+            
+            if(!s.Contains(t.P) || !s.Contains(t.Q))
+                throw new ArgumentException("The states must be in the set of states");
+    
+            // get the binary representation of the state index
+            var p = BinEncode(s.Select(((state, i) => new {state, i})).First(x => x.state.Equals(t.P)).i); // current state
+            var q = BinEncode(s.Select(((state, i) => new {state, i})).First(x => x.state.Equals(t.Q)).i); // next state
+            var sigma = BinEncode(t.A); // current tape symbol
+            var tao = BinEncode(t.B); // new tape symbol
+            switch(t.Direction) { // the direction
+                case Direction.L:
+                    d = "00";
+                    break;
+                case Direction.R:
+                    d = "01";
+                    break;
+                case Direction.S:
+                    d = "10";
+                    break;
+                default:
+                    d = "11";
+                    break;
+            }
+
+            return $"{p}{Alphabet.Blank}{sigma}{Alphabet.Blank}{q}{Alphabet.Blank}{tao}{Alphabet.Blank}{d}{Alphabet.Blank}";
         }
     }
 }
