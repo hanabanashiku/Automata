@@ -43,6 +43,9 @@
     <Compile Include="Alphabet.cs" />
     <Compile Include="FiniteAutomaton.cs" />
     <Compile Include="Automaton.cs" />
+    <Compile Include="MultitapeTuringMachine.cs" />
+    <Compile Include="MultitapeTuringTransition.cs" />
+    <Compile Include="MultitapeTuringTransitionFunction.cs" />
     <Compile Include="NondeterministicFiniteAutomaton.cs" />
     <Compile Include="NondeterministicTransitionFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
