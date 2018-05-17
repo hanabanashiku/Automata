@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -49,6 +49,8 @@ namespace System.Automata {
 		public new bool Run(string x) {
 			return Run(x.ToCharArray());
 		}
+		
+		public new bool Run(string x, out char[] o) { throw new NotSupportedException(); }
 
 		/// <summary>
 		/// Run the machine
@@ -74,6 +76,8 @@ namespace System.Automata {
 				return false; // infinite loop, reject
 			}
 		}
+		
+		public new bool Run(IEnumerable<char> x, out char[] o) { throw new NotSupportedException(); }
 
 		// tapes contains each tape, q is the current state, i contains the current index for each tape.
 		private async Task<bool> Run(List<List<char>> tapes, State q, IList<int> i) {
