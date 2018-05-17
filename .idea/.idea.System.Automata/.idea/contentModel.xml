@@ -22,6 +22,9 @@
         <e p="Automaton.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="FiniteAutomaton.cs" t="Include" />
+        <e p="MultitapeTuringMachine.cs" t="Include" />
+        <e p="MultitapeTuringTransition.cs" t="Include" />
+        <e p="MultitapeTuringTransitionFunction.cs" t="Include" />
         <e p="NondeterministicFiniteAutomaton.cs" t="Include" />
         <e p="NondeterministicTransitionFunction.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />

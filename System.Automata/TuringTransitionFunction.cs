@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,8 +16,6 @@ namespace System.Automata {
         }
 		
         public void Add(TuringTransition t) {
-            if(t.P == null || t.Q == null)
-                throw new NullReferenceException("Null state not allowed!");
             if(Contains(t))
                 return;
             _trans.Add(t);

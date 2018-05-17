@@ -23,7 +23,7 @@
             B = y;
             Direction = d;
             if(p == null || q == null)
-                throw new NullReferenceException("Null reference not allowed!");
+                throw new NullReferenceException("Null state reference not allowed!");
         }
 
         public override string ToString() {

@@ -28,7 +28,7 @@ namespace System.Automata {
         /// <summary>
         /// The tape alphabet.
         /// </summary>
-        public TapeAlphabet TapeAlphabet { get; }
+        public TapeAlphabet TapeAlphabet { get; protected set; }
 
         public new static readonly AcceptingStates AcceptingStates = new AcceptingStates(State.Ha);
 
@@ -54,48 +54,66 @@ namespace System.Automata {
             }
         }
 
+        protected TuringMachine() { }
+
         /// <summary>
         /// Run the machine
         /// </summary>
         /// <param name="x">The input to run the machine on.</param>
+        /// <param name="o">The completed tape contents</param>
         /// <returns>True if the machine halts in the accept state.</returns>
-        /// <remarks>The first move the machine makes is to fill the tape with the blank symbol and the input.</remarks>
-        public bool Run(char[] x) {
+        /// <remarks>The first move the machine makes is to fill the tape with the blank symbol followed by the input.</remarks>
+        public bool Run(IEnumerable<char> x, out char[] o) {
             var tape = new List<char>() { Alphabet.Blank };
             // Fill the tape with the input
             foreach (var c in x) {
-                if (!Alphabet.Contains(c))
+                if (!Alphabet.Contains(c)) {
+                    o = new char[0];
                     return false;
+                }
                 if (c == Alphabet.EmptyString)
                     continue;
                 tape.Add(c);
             }
 
             try {
-                return Run(tape, InitialState, 0).Result;
+                var res = Run(tape, InitialState, 0).Result;
+                o = res.Item2;
+                return res.Item1;
             }
             catch(StackOverflowException) {
+                o = new char[0];
                 return false; // infinite loop, reject
             }
         }
 
-        public bool Run(string x) {
-            return Run(x.ToCharArray());
+        public bool Run(IEnumerable<char> x) {
+            return Run(x, out var _);
         }
 
-        private async Task<bool> Run(List<char> tape, State q, int i) {
+        public bool Run(string x, out char[] o) {
+            return Run(x.ToCharArray(), out o);
+        }
+
+        public bool Run(string x) {
+            return Run(x.ToCharArray(), out var _);
+        }
+
+        private async Task<Tuple<bool, char[]>> Run(IList<char> tape, State q, int i) {
             while (true) {
                 // Check tape bound
                 if (i < 0) 
-                    return false; // move to hr
+                    return new Tuple<bool, char[]>(false, tape.ToArray()); // move to hr
+                
+                // Add blanks as needed to avoid out of bounds exceptions
                 while(tape.Count <= i)
                     tape.Add(Alphabet.Blank);
                 
                 // check for halt
                 if (q.Equals(State.Ha))
-                    return true;
+                    return new Tuple<bool, char[]>(true, tape.ToArray());
                 if (q.Equals(State.Hr))
-                    return false;
+                    return new Tuple<bool, char[]>(false, tape.ToArray());
                 
                 // get possible moves
                 var tr = Transitions[q, tape[i]];
@@ -112,23 +130,26 @@ namespace System.Automata {
 
                 // we have choices!
                 else {
-                    var tasks = new Task<bool>[tr.Length];
+                    var tasks = new Task<Tuple<bool, char[]>>[tr.Length];
                     for (var j = 0; j < tr.Length; j++) {
                         var tapeCopy = new List<char>(tape);
                         tapeCopy[i] = tr[j].B;
                         tasks[j] = Run(tapeCopy, tr[j].Q, MoveTapeHead(i, tr[j].Direction));
                     }
 
-                    var result = false;
-                    foreach (var task in tasks)
-                        result = result || await task;
-
-                    return result;
+                    var result = new char[0];
+                    foreach (var task in tasks) {
+                        var tuple = await task;
+                        result = tuple.Item2;
+                        if(tuple.Item1)
+                            return tuple;
+                    }
+                    return new Tuple<bool, char[]>(false, result);
                 }
             }
         }
 
-        private int MoveTapeHead(int i, Direction d) {
+        protected int MoveTapeHead(int i, Direction d) {
             switch (d) {
                 case Direction.L:
                     return i - 1;
