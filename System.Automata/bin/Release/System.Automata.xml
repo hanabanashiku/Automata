@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>System.Automata</name>
+    </assembly>
+    <members>
+        <member name="T:System.Automata.AcceptingStates">
+            <summary>
+            The set of all accepting states.
+            </summary>
+            <remarks>These states should also be in the set of all states.</remarks>
+        </member>
+        <member name="M:System.Automata.AcceptingStates.#ctor(System.Automata.State[])">
+            <inheritdoc />
+        </member>
+        <member name="T:System.Automata.Alphabet">
+            <summary>
+            A automaton alphabet
+            </summary>
+        </member>
+        <member name="F:System.Automata.Alphabet.EmptyString">
+            <summary>
+            Represents a string of length 0
+            </summary>
+        </member>
+        <member name="F:System.Automata.Alphabet.Z">
+            <summary>
+            Represents the initial symbol on the stack.
+            </summary>
+        </member>
+        <member name="F:System.Automata.Alphabet.Blank">
+            <summary>
+            Represents a blank symbol on a Turing tape.
+            </summary>
+        </member>
+        <member name="F:System.Automata.Alphabet.Wildcard">
+            <summary>
+            Represents a wildcard (?) symbol when replacing stack contents.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Unary">
+            <summary> {1} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Binary">
+            <summary> {0, 1} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Decimal">
+            <summary> {0, 1, ..., 9} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Ab">
+            <summary> {a, b} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Abc">
+            <summary> {a, b, c} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.AzLower">
+            <summary> {a, b, ..., z} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.AzUpper">
+            <summary> {A, B, ..., Z} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.AzAll">
+            <summary> {a, b, ..., Z} </summary>
+        </member>
+        <member name="P:System.Automata.Alphabet.Ascii">
+            <summary> All the printable ASCII characters </summary>
+        </member>
+        <member name="M:System.Automata.Alphabet.#ctor(System.Char[])">
+            <summary>
+            Initialize the alphabet with the given symbols.
+            </summary>
+            <param name="s">The symbols to use.</param>
+        </member>
+        <member name="T:System.Automata.FiniteAutomaton">
+            <summary>
+            A deterministic Finite Automaton
+            </summary>
+        </member>
+        <member name="M:System.Automata.FiniteAutomaton.Run(System.Char[])">
+            <summary>
+            Run the machine using the given input.
+            </summary>
+            <param name="x">The input string.</param>
+            <returns>True if the machine accepts the input string.</returns>
+        </member>
+        <member name="M:System.Automata.FiniteAutomaton.Run(System.String)">
+            <summary>
+            Run the machine using the given input.
+            </summary>
+            <param name="x">The input string.</param>
+            <returns>True if the machine accepts the input string.</returns>
+        </member>
+        <member name="P:System.Automata.Automaton.States">
+            <summary>
+            The set of states.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Automaton.AcceptingStates">
+            <summary>
+            The set of accepting states.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Automaton.Alphabet">
+            <summary>
+            The machine's alphabet.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Automaton.InitialState">
+            <summary>
+            The initial state.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Automaton.Transitions">
+            <summary>
+            The state transition mappings
+            </summary>
+        </member>
+        <member name="P:System.Automata.MultitapeTuringMachine.Transitions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:System.Automata.MultitapeTuringMachine.Tapes">
+            <summary>
+            The number of tapes
+            </summary>
+        </member>
+        <member name="M:System.Automata.MultitapeTuringMachine.Run(System.Collections.Generic.IEnumerable{System.Char})">
+            <summary>
+            Run the machine
+            </summary>
+            <param name="x">The input to run the machine on.</param>
+            <returns>True if the machine halts in the accept state.</returns>
+            <remarks>The first move the machine makes is to fill the first tape (tape 0) with the blank symbol followed by the input.</remarks>
+        </member>
+        <member name="T:System.Automata.MultitapeTuringTransition">
+            <summary>
+            A transition for a Turing machine with multiple tapes.
+            </summary>
+        </member>
+        <member name="P:System.Automata.MultitapeTuringTransition.InitialCharacters">
+            <summary>
+            The list of current characters on each tape.
+            </summary>
+        </member>
+        <member name="P:System.Automata.MultitapeTuringTransition.FinalMoves">
+            <summary>
+            The list of moves for each tape.
+            </summary>
+        </member>
+        <member name="T:System.Automata.NondeterministicFiniteAutomaton">
+            <summary>
+            A nondeterministic Finite Automaton
+            </summary>
+        </member>
+        <member name="P:System.Automata.NondeterministicFiniteAutomaton.Transitions">
+            <summary>
+            State transition mappings
+            </summary>
+        </member>
+        <member name="T:System.Automata.NondeterministicTransitionFunction">
+            <summary>
+            A nondeterministic collection of state transition mappings.
+            </summary>
+        </member>
+        <member name="T:System.Automata.PushdownAutomaton">
+            <summary>
+            A deterministic pushdown automaton utilizing a stack.
+            </summary>
+        </member>
+        <member name="P:System.Automata.PushdownAutomaton.StackAlphabet">
+            <summary>
+            The stack alphabet.
+            </summary>
+        </member>
+        <member name="P:System.Automata.PushdownAutomaton.Transitions">
+            <summary>
+            The transition function
+            </summary>
+        </member>
+        <member name="M:System.Automata.PushdownAutomaton.#ctor(System.Automata.States,System.Automata.Alphabet,System.Automata.StackAlphabet,System.Automata.PushdownTransitionFunction,System.Automata.State,System.Automata.AcceptingStates)">
+            <param name="q">The set of states</param>
+            <param name="a">The language alphabet</param>
+            <param name="g">The stack alphabet</param>
+            <param name="d">The transition function containing Transition and PushdownTransition objects</param>
+            <param name="q0">The initial state</param>
+            <param name="f">The set of accepting states</param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:System.Automata.PushdownTransition.Top">
+            <summary>
+            The top stack character
+            </summary>
+        </member>
+        <member name="P:System.Automata.PushdownTransition.Replace">
+            <summary>
+            The sequence to replace the top stack character with.
+            Use Alphabet.EmptyString to delete the top stack character.
+            </summary>
+        </member>
+        <member name="T:System.Automata.PushdownTransitionFunction">
+            <summary>
+            A collection of state transition mappings for PDAs
+            </summary>
+        </member>
+        <member name="T:System.Automata.StackAlphabet">
+            <summary>
+            An alphabet for use with a pushdown stack
+            </summary>
+        </member>
+        <member name="T:System.Automata.State">
+            <summary>
+            A automaton state.
+            </summary>
+        </member>
+        <member name="F:System.Automata.State.Hr">
+            <summary>
+            The Turing halting accept state.
+            </summary>
+        </member>
+        <member name="F:System.Automata.State.Ha">
+            <summary>
+            The Turing halting reject state.
+            </summary>
+        </member>
+        <member name="P:System.Automata.State.Name">
+            <summary>
+            The name of the state
+            </summary>
+        </member>
+        <member name="P:System.Automata.State.Accepting">
+            <summary>
+            Is the state an accepting state?
+            </summary>
+        </member>
+        <member name="M:System.Automata.State.#ctor(System.String)">
+            <param name="name">The name of the state</param>
+        </member>
+        <member name="T:System.Automata.States">
+            <summary>
+            The set of all states
+            </summary>
+        </member>
+        <member name="M:System.Automata.States.#ctor(System.Int32)">
+            <summary>
+            Initialize the set with n states name qi for each <![CDATA[i < n]]>.
+            </summary>
+            <param name="n">The number of states</param>
+        </member>
+        <member name="M:System.Automata.States.#ctor(System.Automata.State[])">
+            <summary>
+            Initialize the set with the given states.
+            </summary>
+            <param name="q">The states to include</param>
+        </member>
+        <member name="M:System.Automata.States.Add(System.Automata.State)">
+            <summary>
+            Add a state to the set.
+            </summary>
+            <param name="q">The state to add</param>
+        </member>
+        <member name="M:System.Automata.States.Contains(System.Automata.State)">
+            <summary>
+            Check if the state exists in the set
+            </summary>
+            <param name="q">The state to check</param>
+            <returns>True if it exists in the set.</returns>
+        </member>
+        <member name="T:System.Automata.TapeAlphabet">
+            <summary>
+            An alphabet for use with a Turing tape
+            </summary>
+        </member>
+        <member name="T:System.Automata.Transition">
+            <summary>
+            A state transition
+            </summary>
+        </member>
+        <member name="P:System.Automata.Transition.P">
+            <summary>
+            The current state.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Transition.Q">
+            <summary>
+            The next state.
+            </summary>
+        </member>
+        <member name="P:System.Automata.Transition.A">
+            <summary>
+            The symbol to transition on
+            </summary>
+        </member>
+        <member name="M:System.Automata.Transition.#ctor(System.Automata.State,System.Char,System.Automata.State)">
+            <param name="p">The current state</param>
+            <param name="c">The current input symbol</param>
+            <param name="q">The next state</param>
+            <remarks>For a epsilon-transition, use Alphabet.<see cref="F:System.Automata.Alphabet.EmptyString" /></remarks>
+        </member>
+        <member name="T:System.Automata.TransitionFunction">
+            <summary>
+            A deterministic collection of state transition mappings.
+            </summary>
+        </member>
+        <member name="M:System.Automata.TransitionFunction.Add(System.Automata.Transition)">
+            <summary>
+            Add a transition to the function
+            </summary>
+            <param name="t">The transition to add</param>
+            <exception cref="T:System.NullReferenceException">If a transition has a null state</exception>
+            <exception cref="T:System.ArgumentException">If a null transition (using EmptyString) was added</exception>
+            <remarks>Not thread safe! Do not use after adding the function to an automaton.</remarks>
+        </member>
+        <member name="P:System.Automata.TransitionFunction.Item(System.Automata.State,System.Char)">
+            <summary>
+            Get the next state Transition
+            </summary>
+            <param name="p">The current state</param>
+            <param name="s">The current input character</param>
+        </member>
+        <member name="T:System.Automata.TuringMachine">
+            <summary>
+            A nondeterministic Turing machine
+            </summary>
+        </member>
+        <member name="T:System.Automata.TuringMachine.Direction">
+            <summary>
+            The direction to move the tape
+            </summary>
+        </member>
+        <member name="F:System.Automata.TuringMachine.Direction.L">
+            <summary>
+            Move the tape head left one cell.
+            </summary>
+        </member>
+        <member name="F:System.Automata.TuringMachine.Direction.R">
+            <summary>
+            Move the tape head right one cell.
+            </summary>
+        </member>
+        <member name="F:System.Automata.TuringMachine.Direction.S">
+            <summary>
+            Do not move the tape head.
+            </summary>
+        </member>
+        <member name="P:System.Automata.TuringMachine.TapeAlphabet">
+            <summary>
+            The tape alphabet.
+            </summary>
+        </member>
+        <member name="M:System.Automata.TuringMachine.Run(System.Collections.Generic.IEnumerable{System.Char},System.Char[]@)">
+            <summary>
+            Run the machine
+            </summary>
+            <param name="x">The input to run the machine on.</param>
+            <param name="o">The completed tape contents</param>
+            <returns>True if the machine halts in the accept state.</returns>
+            <remarks>The first move the machine makes is to fill the tape with the blank symbol followed by the input.</remarks>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.Int32)">
+            <param name="x">The number to encode</param>
+            <returns>The integer as a binary number</returns>
+            <remarks>32-bits with two's complement for negatives, without leading 0s</remarks>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.Char)">
+            <param name="x">The character to encode</param>
+            <returns>The character as an ASCII binary number without leading 0s</returns>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.Char[])">
+            <param name="x">The string to encode</param>
+            <returns>A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.</returns>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.String)">
+            <param name="x">The string to encode</param>
+            <returns>A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.</returns>
+        </member>
+        <member name="M:System.Automata.TuringMachine.UnaryEncode(System.UInt32)">
+            <param name="n">The number to encode</param>
+            <returns>The number n returned as the string 1^n</returns>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.Automata.TuringMachine,System.Char[])">
+            <summary>
+            Encode a turing machine
+            </summary>
+            <param name="t">The turing machine to encode</param>
+            <param name="x">The input to encode</param>
+            <returns>
+            A string ∈ {0, 1, Δ}* representing a turing machine in the form
+            Δe(m0)Δe(m1)Δ..Δe(mk)Δe(x)
+            Where mk is a transition and e is the binary encoding function.
+            </returns>
+            <remarks>See BinEncode(TuringTransition) and BinEncode(char[]) for specific encodings.</remarks>
+        </member>
+        <member name="M:System.Automata.TuringMachine.BinEncode(System.Automata.TuringTransition,System.Automata.States)">
+            <summary>
+            Encode a turing machine move 
+            </summary>
+            <param name="t">The transition</param>
+            <param name="s">The set of states</param>
+            <returns>
+            A string ∈ {0, 1, Δ}* representing a turing transition
+            𝛿(p, σ) = (q, τ, D) where p,q ∈ S, σ,τ ∈ Σ
+            in the form
+            n(indexof(p))Δn(σ)Δn(indexof(q))Δn(τ)Δn(D)Δ
+            where n(x) reperesents the binary integer or UTF representation of x.
+            n(D) = { L->00, R->01, S->10, err->11 }
+            </returns>
+            <exception cref="T:System.ArgumentException">If a state referenced is not contained in s</exception>
+        </member>
+        <member name="T:System.Automata.TuringTransition">
+            <summary>
+            A transition for a Turing machine
+            </summary>
+        </member>
+        <member name="P:System.Automata.TuringTransition.B">
+            <summary>
+            The character to replace the current tape cell with.
+            </summary>
+        </member>
+        <member name="P:System.Automata.TuringTransition.Direction">
+            <summary>
+            The direction to move the tape head in.
+            </summary>
+        </member>
+        <member name="M:System.Automata.TuringTransition.#ctor(System.Automata.State,System.Char,System.Automata.State,System.Char,System.Automata.TuringMachine.Direction)">
+            <param name="p">The current state.</param>
+            <param name="x">The current tape cell contents.</param>
+            <param name="q">The next state.</param>
+            <param name="y">The character to replace the tape cell with.</param>
+            <param name="d">The direction to move the tape head after transitioning.</param>
+        </member>
+        <member name="T:System.Automata.TuringTransitionFunction">
+            <summary>
+            A collection of state transition mappings for PDAs
+            </summary>
+        </member>
+    </members>
+</doc>
