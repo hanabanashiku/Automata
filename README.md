@@ -1,8 +1,7 @@
 # Automata
 Automata is a C# library that uses language-generating machines to process sequences of symbols or generate yes/no answers. Each available machine follows its theoretical implementation as closely as possible; to make the process simple and intuitive, each constructor is made to match the mathematical definition of the automaton. Simply put, this library is capable of approximately anything that a theoretical machine is capable of.
 
-To obtain the latest version of this library, visit the [releases page](https://github.com/hanabanashiku/Automata/releases).
-
+To obtain the latest version of this library, visit the [releases page](https://github.com/hanabanashiku/Automata/releases). <br />
 View the full API documentation at this repository's [Github Pages](https://hanabanashiku.github.io/Automata/)
 
 ## Usage
