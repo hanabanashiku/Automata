@@ -1,0 +1,63 @@
+\hypertarget{class_system_1_1_automata_1_1_turing_transition_function}{}\section{System.\+Automata.\+Turing\+Transition\+Function Class Reference}
+\label{class_system_1_1_automata_1_1_turing_transition_function}\index{System.\+Automata.\+Turing\+Transition\+Function@{System.\+Automata.\+Turing\+Transition\+Function}}
+
+
+A collection of state transition mappings for P\+D\+As  
+
+
+Inheritance diagram for System.\+Automata.\+Turing\+Transition\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_system_1_1_automata_1_1_turing_transition_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_aaa2341e389d0d2a4291b5379bc8e110f}\label{class_system_1_1_automata_1_1_turing_transition_function_aaa2341e389d0d2a4291b5379bc8e110f}} 
+{\bfseries Turing\+Transition\+Function} (params \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}}\mbox{[}$\,$\mbox{]} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_a3b2a9439a7742e55d003002065746e7e}\label{class_system_1_1_automata_1_1_turing_transition_function_a3b2a9439a7742e55d003002065746e7e}} 
+void {\bfseries Add} (\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_a7db6f1271627564f81e7354709248af6}\label{class_system_1_1_automata_1_1_turing_transition_function_a7db6f1271627564f81e7354709248af6}} 
+bool {\bfseries Contains} (\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_aa297d69ac197b1887ef5769a27b1a2b9}\label{class_system_1_1_automata_1_1_turing_transition_function_aa297d69ac197b1887ef5769a27b1a2b9}} 
+bool {\bfseries Exists} (Predicate$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_a7be9f8007ad5e06b2b09e73c15e4bd81}\label{class_system_1_1_automata_1_1_turing_transition_function_a7be9f8007ad5e06b2b09e73c15e4bd81}} 
+I\+Enumerator$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} $>$ {\bfseries Get\+Enumerator} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_a768db7b6eb2d61eeb49ea912da85ba8f}\label{class_system_1_1_automata_1_1_turing_transition_function_a768db7b6eb2d61eeb49ea912da85ba8f}} 
+int {\bfseries Count} =$>$ \+\_\+trans.\+Count
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} \mbox{[}$\,$\mbox{]} {\bfseries this\mbox{[}\+State p, char a\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of state transition mappings for P\+D\+As 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_transition_function_a1f3d2faa8ea2a3b623c2e7cb55c56290}\label{class_system_1_1_automata_1_1_turing_transition_function_a1f3d2faa8ea2a3b623c2e7cb55c56290}} 
+\index{System\+::\+Automata\+::\+Turing\+Transition\+Function@{System\+::\+Automata\+::\+Turing\+Transition\+Function}!this\mbox{[}\+State p, char a\mbox{]}@{this[State p, char a]}}
+\index{this\mbox{[}\+State p, char a\mbox{]}@{this[State p, char a]}!System\+::\+Automata\+::\+Turing\+Transition\+Function@{System\+::\+Automata\+::\+Turing\+Transition\+Function}}
+\subsubsection{\texorpdfstring{this[State p, char a]}{this[State p, char a]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} \mbox{[}$\,$\mbox{]} System.\+Automata.\+Turing\+Transition\+Function.\+this\mbox{[}\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} p, char a\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=>
+            \_trans.Where(x => x.P.Equals(p) && x.A == a).ToArray()
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Turing\+Transition\+Function.\+cs\end{DoxyCompactItemize}

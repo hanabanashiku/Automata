@@ -1,0 +1,55 @@
+\hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function}{}\section{System.\+Automata.\+Multitape\+Turing\+Transition\+Function Class Reference}
+\label{class_system_1_1_automata_1_1_multitape_turing_transition_function}\index{System.\+Automata.\+Multitape\+Turing\+Transition\+Function@{System.\+Automata.\+Multitape\+Turing\+Transition\+Function}}
+Inheritance diagram for System.\+Automata.\+Multitape\+Turing\+Transition\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_system_1_1_automata_1_1_multitape_turing_transition_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_abc2028b8c1da4d151a94e9661fc4cea3}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_abc2028b8c1da4d151a94e9661fc4cea3}} 
+{\bfseries Multitape\+Turing\+Transition\+Function} (params \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}}\mbox{[}$\,$\mbox{]} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a3a0bac9d6625523730d900a1a8dbb01a}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a3a0bac9d6625523730d900a1a8dbb01a}} 
+void {\bfseries Add} (\mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a6b11b7337cbd5e84f087bfcda1def9b4}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a6b11b7337cbd5e84f087bfcda1def9b4}} 
+bool {\bfseries Contains} (\mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a2aa88815dde298242349e655000e9c91}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a2aa88815dde298242349e655000e9c91}} 
+bool {\bfseries Exists} (Predicate$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a949c8706940c8bd94018b35650c42136}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a949c8706940c8bd94018b35650c42136}} 
+I\+Enumerator$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} $>$ {\bfseries Get\+Enumerator} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a19f2ec1f5277d8f90e9bf762d1acdc30}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a19f2ec1f5277d8f90e9bf762d1acdc30}} 
+int {\bfseries Count} =$>$ \+\_\+trans.\+Count
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} \mbox{[}$\,$\mbox{]} this\mbox{[}\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} p, char\mbox{[}$\,$\mbox{]} {\bfseries a}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_transition_function_a9cfbfb52eb78895705fa0b46908e55c6}\label{class_system_1_1_automata_1_1_multitape_turing_transition_function_a9cfbfb52eb78895705fa0b46908e55c6}} 
+\index{System\+::\+Automata\+::\+Multitape\+Turing\+Transition\+Function@{System\+::\+Automata\+::\+Multitape\+Turing\+Transition\+Function}!a@{a}}
+\index{a@{a}!System\+::\+Automata\+::\+Multitape\+Turing\+Transition\+Function@{System\+::\+Automata\+::\+Multitape\+Turing\+Transition\+Function}}
+\subsubsection{\texorpdfstring{a}{a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition}{Multitape\+Turing\+Transition}} \mbox{[}$\,$\mbox{]} this\mbox{[}\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} p, char\mbox{[}$\,$\mbox{]} System.\+Automata.\+Multitape\+Turing\+Transition\+Function.\+a}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=>
+            \_trans.Where(x => x.P.Equals(p) && x.InitialCharacters.Count == a.Length && x.
+      \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition_ac75736919c5dd909eda605dbb2e1a963}{InitialCharacters}}.SequenceEqual(a))
+                .ToArray()
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Multitape\+Turing\+Transition\+Function.\+cs\end{DoxyCompactItemize}

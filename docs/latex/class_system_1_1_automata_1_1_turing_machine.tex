@@ -1,0 +1,269 @@
+\hypertarget{class_system_1_1_automata_1_1_turing_machine}{}\section{System.\+Automata.\+Turing\+Machine Class Reference}
+\label{class_system_1_1_automata_1_1_turing_machine}\index{System.\+Automata.\+Turing\+Machine@{System.\+Automata.\+Turing\+Machine}}
+
+
+A nondeterministic Turing machine  
+
+
+Inheritance diagram for System.\+Automata.\+Turing\+Machine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_system_1_1_automata_1_1_turing_machine}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9}{Direction}} \{ \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ad20caec3b48a1eef164cb4ca81ba2587}{Direction.\+L}}, 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ae1e1d3d40573127e9ee0480caf1283d6}{Direction.\+R}}, 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9a5dbc98dcc983a70728bd082d1a47546e}{Direction.\+S}}
+ \}
+\begin{DoxyCompactList}\small\item\em The direction to move the tape \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_aaa0a99528675b0d136a68f9e0981d3fa}\label{class_system_1_1_automata_1_1_turing_machine_aaa0a99528675b0d136a68f9e0981d3fa}} 
+{\bfseries Turing\+Machine} (\mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}} q, \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} a, \mbox{\hyperlink{class_system_1_1_automata_1_1_tape_alphabet}{Tape\+Alphabet}} g, \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition_function}{Turing\+Transition\+Function}} tf, \mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} q0)
+\item 
+bool \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a49d164f2e9784ad4ac23410c702ad1b0}{Run}} (I\+Enumerable$<$ char $>$ x, out char\mbox{[}$\,$\mbox{]} o)
+\begin{DoxyCompactList}\small\item\em Run the machine \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a4392d8174f54fb36a8c4ef86161ef6c8}\label{class_system_1_1_automata_1_1_turing_machine_a4392d8174f54fb36a8c4ef86161ef6c8}} 
+bool {\bfseries Run} (I\+Enumerable$<$ char $>$ x)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a98e84b8b1e0e551cb07ff9408606196c}\label{class_system_1_1_automata_1_1_turing_machine_a98e84b8b1e0e551cb07ff9408606196c}} 
+bool {\bfseries Run} (string x, out char\mbox{[}$\,$\mbox{]} o)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a765c176211ed3dd0381728b1c90ba36c}\label{class_system_1_1_automata_1_1_turing_machine_a765c176211ed3dd0381728b1c90ba36c}} 
+bool {\bfseries Run} (string x)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a91f5ff324232a1377aa280bc7649acb5}{Bin\+Encode}} (int x)
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a256b8d185c89a85dc7c27b02e8f61684}{Bin\+Encode}} (char x)
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a9f6c774477e3ed6600244bb0ffbe1579}{Bin\+Encode}} (char\mbox{[}$\,$\mbox{]} x)
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a559b0d5709eab0bd072c9ae1da449cf4}{Bin\+Encode}} (string x)
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_ad62c28bec4c48435a98b4eb5edb89487}{Unary\+Encode}} (uint n)
+\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a46274b3df870b1f350b8067e4eda77d9}{Bin\+Encode}} (\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine}{Turing\+Machine}} t, char\mbox{[}$\,$\mbox{]} x=null)
+\begin{DoxyCompactList}\small\item\em Encode a turing machine \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_ae14f5c2439f706832f06cfc712e27b93}{Bin\+Encode}} (\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}} t, \mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}} s)
+\begin{DoxyCompactList}\small\item\em Encode a turing machine move \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a95b030005a20801b27d0ec17aa017766}\label{class_system_1_1_automata_1_1_turing_machine_a95b030005a20801b27d0ec17aa017766}} 
+static new readonly \mbox{\hyperlink{class_system_1_1_automata_1_1_accepting_states}{Accepting\+States}} {\bfseries Accepting\+States} = new \mbox{\hyperlink{class_system_1_1_automata_1_1_accepting_states}{Accepting\+States}}(\mbox{\hyperlink{class_system_1_1_automata_1_1_state_ae6639cebabe973cfa8825fedbc4ae741}{State.\+Ha}})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_ad58e324621c3250dc8b5158c8ead621f}\label{class_system_1_1_automata_1_1_turing_machine_ad58e324621c3250dc8b5158c8ead621f}} 
+int {\bfseries Move\+Tape\+Head} (int i, \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9}{Direction}} d)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_tape_alphabet}{Tape\+Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_a6f92addf3d029757073431b5b4758cdb}{Tape\+Alphabet}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The tape alphabet. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a7852b38b2d6a3f734ff2075bb2c3831b}\label{class_system_1_1_automata_1_1_turing_machine_a7852b38b2d6a3f734ff2075bb2c3831b}} 
+new \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition_function}{Turing\+Transition\+Function}} {\bfseries Transitions}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A nondeterministic Turing machine 
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9}\label{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Direction@{Direction}}
+\index{Direction@{Direction}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9}{System.\+Automata.\+Turing\+Machine.\+Direction}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The direction to move the tape 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L@{L}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!L@{L}}}\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ad20caec3b48a1eef164cb4ca81ba2587}\label{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ad20caec3b48a1eef164cb4ca81ba2587}} 
+L&Move the tape head left one cell. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R@{R}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!R@{R}}}\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ae1e1d3d40573127e9ee0480caf1283d6}\label{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9ae1e1d3d40573127e9ee0480caf1283d6}} 
+R&Move the tape head right one cell. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!S@{S}}}\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9a5dbc98dcc983a70728bd082d1a47546e}\label{class_system_1_1_automata_1_1_turing_machine_aa253c3820befa3cfdd3d17b2d8fdd2d9a5dbc98dcc983a70728bd082d1a47546e}} 
+S&Do not move the tape head. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a91f5ff324232a1377aa280bc7649acb5}\label{class_system_1_1_automata_1_1_turing_machine_a91f5ff324232a1377aa280bc7649acb5}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The number to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The integer as a binary number
+\end{DoxyReturn}
+
+
+32-\/bits with two\textquotesingle{}s complement for negatives, without leading 0s\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a256b8d185c89a85dc7c27b02e8f61684}\label{class_system_1_1_automata_1_1_turing_machine_a256b8d185c89a85dc7c27b02e8f61684}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{char}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The character to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character as an A\+S\+C\+II binary number without leading 0s
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a9f6c774477e3ed6600244bb0ffbe1579}\label{class_system_1_1_automata_1_1_turing_machine_a9f6c774477e3ed6600244bb0ffbe1579}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{char \mbox{[}$\,$\mbox{]}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The string to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a559b0d5709eab0bd072c9ae1da449cf4}\label{class_system_1_1_automata_1_1_turing_machine_a559b0d5709eab0bd072c9ae1da449cf4}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{string}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The string to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string of the form e(x0)Δe(x1)Δ..Δe(xk)Δ where e(xk) is the binary encoding of a single character.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a46274b3df870b1f350b8067e4eda77d9}\label{class_system_1_1_automata_1_1_turing_machine_a46274b3df870b1f350b8067e4eda77d9}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_machine}{Turing\+Machine}}}]{t,  }\item[{char \mbox{[}$\,$\mbox{]}}]{x = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode a turing machine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The turing machine to encode\\
+\hline
+{\em x} & The input to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string ∈ \{0, 1, Δ\}$\ast$ representing a turing machine in the form Δe(m0)Δe(m1)Δ..Δe(mk)Δe(x) Where mk is a transition and e is the binary encoding function. 
+\end{DoxyReturn}
+
+
+See Bin\+Encode(\+Turing\+Transition) and Bin\+Encode(char\mbox{[}$\,$\mbox{]}) for specific encodings.\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_ae14f5c2439f706832f06cfc712e27b93}\label{class_system_1_1_automata_1_1_turing_machine_ae14f5c2439f706832f06cfc712e27b93}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Bin\+Encode@{Bin\+Encode}}
+\index{Bin\+Encode@{Bin\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Bin\+Encode()}{BinEncode()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Bin\+Encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_turing_transition}{Turing\+Transition}}}]{t,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}}}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode a turing machine move 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The transition\\
+\hline
+{\em s} & The set of states\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string ∈ \{0, 1, Δ\}$\ast$ representing a turing transition 𝛿(p, σ) = (q, τ, D) where p,q ∈ S, σ,τ ∈ Σ in the form n(indexof(p))Δn(σ)Δn(indexof(q))Δn(τ)Δn(\+D)Δ where n(x) reperesents the binary integer or U\+TF representation of x. n(\+D) = \{ L-\/$>$00, R-\/$>$01, S-\/$>$10, err-\/$>$11 \} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & If a state referenced is not contained in s\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a49d164f2e9784ad4ac23410c702ad1b0}\label{class_system_1_1_automata_1_1_turing_machine_a49d164f2e9784ad4ac23410c702ad1b0}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Run@{Run}}
+\index{Run@{Run}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily bool System.\+Automata.\+Turing\+Machine.\+Run (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ char $>$}]{x,  }\item[{out char \mbox{[}$\,$\mbox{]}}]{o }\end{DoxyParamCaption})}
+
+
+
+Run the machine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input to run the machine on.\\
+\hline
+{\em o} & The completed tape contents\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the machine halts in the accept state.
+\end{DoxyReturn}
+
+
+The first move the machine makes is to fill the tape with the blank symbol followed by the input.\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_ad62c28bec4c48435a98b4eb5edb89487}\label{class_system_1_1_automata_1_1_turing_machine_ad62c28bec4c48435a98b4eb5edb89487}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Unary\+Encode@{Unary\+Encode}}
+\index{Unary\+Encode@{Unary\+Encode}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Unary\+Encode()}{UnaryEncode()}}
+{\footnotesize\ttfamily static string System.\+Automata.\+Turing\+Machine.\+Unary\+Encode (\begin{DoxyParamCaption}\item[{uint}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The number to encode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number n returned as the string 1$^\wedge$n
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_turing_machine_a6f92addf3d029757073431b5b4758cdb}\label{class_system_1_1_automata_1_1_turing_machine_a6f92addf3d029757073431b5b4758cdb}} 
+\index{System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}!Tape\+Alphabet@{Tape\+Alphabet}}
+\index{Tape\+Alphabet@{Tape\+Alphabet}!System\+::\+Automata\+::\+Turing\+Machine@{System\+::\+Automata\+::\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Tape\+Alphabet}{TapeAlphabet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_tape_alphabet}{Tape\+Alphabet}} System.\+Automata.\+Turing\+Machine.\+Tape\+Alphabet\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+The tape alphabet. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Turing\+Machine.\+cs\end{DoxyCompactItemize}

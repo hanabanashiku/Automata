@@ -1,0 +1,84 @@
+\hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine}{}\section{System.\+Automata.\+Multitape\+Turing\+Machine Class Reference}
+\label{class_system_1_1_automata_1_1_multitape_turing_machine}\index{System.\+Automata.\+Multitape\+Turing\+Machine@{System.\+Automata.\+Multitape\+Turing\+Machine}}
+Inheritance diagram for System.\+Automata.\+Multitape\+Turing\+Machine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_system_1_1_automata_1_1_multitape_turing_machine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_afc461c5047fd4f27545eceae4110791f}\label{class_system_1_1_automata_1_1_multitape_turing_machine_afc461c5047fd4f27545eceae4110791f}} 
+{\bfseries Multitape\+Turing\+Machine} (\mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}} q, \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} a, \mbox{\hyperlink{class_system_1_1_automata_1_1_tape_alphabet}{Tape\+Alphabet}} g, \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition_function}{Multitape\+Turing\+Transition\+Function}} tf, \mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} q0, int k=1)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_a39f81dc6eaad76473b0771a75f6cd82c}\label{class_system_1_1_automata_1_1_multitape_turing_machine_a39f81dc6eaad76473b0771a75f6cd82c}} 
+new bool {\bfseries Run} (string x)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_a426056ee2d8989e27ae31667ec6dfc40}\label{class_system_1_1_automata_1_1_multitape_turing_machine_a426056ee2d8989e27ae31667ec6dfc40}} 
+new bool {\bfseries Run} (string x, out char\mbox{[}$\,$\mbox{]} o)
+\item 
+new bool \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_machine_abc213e915db06cf43250f4739ade5779}{Run}} (I\+Enumerable$<$ char $>$ x)
+\begin{DoxyCompactList}\small\item\em Run the machine \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_a0d62cbc26d821e1200eecd1160eeaecd}\label{class_system_1_1_automata_1_1_multitape_turing_machine_a0d62cbc26d821e1200eecd1160eeaecd}} 
+new bool {\bfseries Run} (I\+Enumerable$<$ char $>$ x, out char\mbox{[}$\,$\mbox{]} o)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+new \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition_function}{Multitape\+Turing\+Transition\+Function}} \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_machine_a89737fb1fa1112b845f1c74fb2b280cd}{Transitions}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_machine_a1e2e004b209a91f6d21c09b8fc8481f0}{Tapes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The number of tapes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_abc213e915db06cf43250f4739ade5779}\label{class_system_1_1_automata_1_1_multitape_turing_machine_abc213e915db06cf43250f4739ade5779}} 
+\index{System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}!Run@{Run}}
+\index{Run@{Run}!System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily new bool System.\+Automata.\+Multitape\+Turing\+Machine.\+Run (\begin{DoxyParamCaption}\item[{I\+Enumerable$<$ char $>$}]{x }\end{DoxyParamCaption})}
+
+
+
+Run the machine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The input to run the machine on.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the machine halts in the accept state.
+\end{DoxyReturn}
+
+
+The first move the machine makes is to fill the first tape (tape 0) with the blank symbol followed by the input.
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_a1e2e004b209a91f6d21c09b8fc8481f0}\label{class_system_1_1_automata_1_1_multitape_turing_machine_a1e2e004b209a91f6d21c09b8fc8481f0}} 
+\index{System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}!Tapes@{Tapes}}
+\index{Tapes@{Tapes}!System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Tapes}{Tapes}}
+{\footnotesize\ttfamily int System.\+Automata.\+Multitape\+Turing\+Machine.\+Tapes\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The number of tapes 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_multitape_turing_machine_a89737fb1fa1112b845f1c74fb2b280cd}\label{class_system_1_1_automata_1_1_multitape_turing_machine_a89737fb1fa1112b845f1c74fb2b280cd}} 
+\index{System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}!Transitions@{Transitions}}
+\index{Transitions@{Transitions}!System\+::\+Automata\+::\+Multitape\+Turing\+Machine@{System\+::\+Automata\+::\+Multitape\+Turing\+Machine}}
+\subsubsection{\texorpdfstring{Transitions}{Transitions}}
+{\footnotesize\ttfamily new \mbox{\hyperlink{class_system_1_1_automata_1_1_multitape_turing_transition_function}{Multitape\+Turing\+Transition\+Function}} System.\+Automata.\+Multitape\+Turing\+Machine.\+Transitions\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Multitape\+Turing\+Machine.\+cs\end{DoxyCompactItemize}

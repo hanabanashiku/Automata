@@ -1,0 +1,64 @@
+\hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function}{}\section{System.\+Automata.\+Pushdown\+Transition\+Function Class Reference}
+\label{class_system_1_1_automata_1_1_pushdown_transition_function}\index{System.\+Automata.\+Pushdown\+Transition\+Function@{System.\+Automata.\+Pushdown\+Transition\+Function}}
+
+
+A collection of state transition mappings for P\+D\+As  
+
+
+Inheritance diagram for System.\+Automata.\+Pushdown\+Transition\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_system_1_1_automata_1_1_pushdown_transition_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_a2f4c35d7442e155bf73aaa70c3bb203e}\label{class_system_1_1_automata_1_1_pushdown_transition_function_a2f4c35d7442e155bf73aaa70c3bb203e}} 
+{\bfseries Pushdown\+Transition\+Function} (params \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}}\mbox{[}$\,$\mbox{]} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_a2f391f47af647521368f76797263e999}\label{class_system_1_1_automata_1_1_pushdown_transition_function_a2f391f47af647521368f76797263e999}} 
+void {\bfseries Add} (\mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_a4e7f49843ec7c016057b020f3cbc4efa}\label{class_system_1_1_automata_1_1_pushdown_transition_function_a4e7f49843ec7c016057b020f3cbc4efa}} 
+bool {\bfseries Contains} (\mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_ac1d0852a760decb8af403e01c00645d6}\label{class_system_1_1_automata_1_1_pushdown_transition_function_ac1d0852a760decb8af403e01c00645d6}} 
+bool {\bfseries Exists} (Predicate$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_a517ca0177583fc9438b1b688d26ddacb}\label{class_system_1_1_automata_1_1_pushdown_transition_function_a517ca0177583fc9438b1b688d26ddacb}} 
+I\+Enumerator$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} $>$ {\bfseries Get\+Enumerator} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_ad889b934b944ce5d2f36afc16a1e28a2}\label{class_system_1_1_automata_1_1_pushdown_transition_function_ad889b934b944ce5d2f36afc16a1e28a2}} 
+int {\bfseries Count} =$>$ \+\_\+trans.\+Count
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} \mbox{[}$\,$\mbox{]} {\bfseries this\mbox{[}\+State p, char a, char alpha\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A collection of state transition mappings for P\+D\+As 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_transition_function_ae1c7ef36c2a602d2fdce4ea41573543c}\label{class_system_1_1_automata_1_1_pushdown_transition_function_ae1c7ef36c2a602d2fdce4ea41573543c}} 
+\index{System\+::\+Automata\+::\+Pushdown\+Transition\+Function@{System\+::\+Automata\+::\+Pushdown\+Transition\+Function}!this\mbox{[}\+State p, char a, char alpha\mbox{]}@{this[State p, char a, char alpha]}}
+\index{this\mbox{[}\+State p, char a, char alpha\mbox{]}@{this[State p, char a, char alpha]}!System\+::\+Automata\+::\+Pushdown\+Transition\+Function@{System\+::\+Automata\+::\+Pushdown\+Transition\+Function}}
+\subsubsection{\texorpdfstring{this[State p, char a, char alpha]}{this[State p, char a, char alpha]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} \mbox{[}$\,$\mbox{]} System.\+Automata.\+Pushdown\+Transition\+Function.\+this\mbox{[}\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} p, char a, char alpha\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=>
+            \_trans.Where(x => x.P.Equals(p) && x.A == a && (x.Top == alpha || x.Top == Alphabet.Wildcard)).
+      ToArray()
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Pushdown\+Transition\+Function.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+\hypertarget{class_system_1_1_automata_1_1_alphabet}{}\section{System.\+Automata.\+Alphabet Class Reference}
+\label{class_system_1_1_automata_1_1_alphabet}\index{System.\+Automata.\+Alphabet@{System.\+Automata.\+Alphabet}}
+
+
+A automaton alphabet  
+
+
+Inheritance diagram for System.\+Automata.\+Alphabet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_system_1_1_automata_1_1_alphabet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a890f76aaecd05e71d6ad4518cdb1cbad}{Alphabet}} (params char\mbox{[}$\,$\mbox{]} s)
+\begin{DoxyCompactList}\small\item\em Initialize the alphabet with the given symbols. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a47207ac846122554bf2edd534027a4b6}\label{class_system_1_1_automata_1_1_alphabet_a47207ac846122554bf2edd534027a4b6}} 
+void {\bfseries Add} (char s)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a2470bf21c905aa98e1596a9365703d61}\label{class_system_1_1_automata_1_1_alphabet_a2470bf21c905aa98e1596a9365703d61}} 
+bool {\bfseries Contains} (char s)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a03071782ad55452e7981cd00ae2d04e8}\label{class_system_1_1_automata_1_1_alphabet_a03071782ad55452e7981cd00ae2d04e8}} 
+I\+Enumerator$<$ char $>$ {\bfseries Get\+Enumerator} ()
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_ae17c19674243e1b67cc77590c68ae79e}\label{class_system_1_1_automata_1_1_alphabet_ae17c19674243e1b67cc77590c68ae79e}} 
+override string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a834a05d940b1f44a2d1d83463a16722a}\label{class_system_1_1_automata_1_1_alphabet_a834a05d940b1f44a2d1d83463a16722a}} 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} {\bfseries operator+} (\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} a, \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} b)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a8cb990121ba3d7888ce8ba20782ef8d0}\label{class_system_1_1_automata_1_1_alphabet_a8cb990121ba3d7888ce8ba20782ef8d0}} 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} {\bfseries operator-\/} (\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} a, \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} b)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_aa3f8c16de4596ed24f2fe0fb77e7493c}{Empty\+String}} = \textquotesingle{}\textbackslash{}0\textquotesingle{}
+\begin{DoxyCompactList}\small\item\em Represents a string of length 0 \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a1c103a38506cc7b398a6974baa5ead67}{Z}} = (char)3
+\begin{DoxyCompactList}\small\item\em Represents the initial symbol on the stack. \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a16131b03673f7d6389ca4ac943881848}{Blank}} = (char)127
+\begin{DoxyCompactList}\small\item\em Represents a blank symbol on a Turing tape. \end{DoxyCompactList}\item 
+const char \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a8aa33ab3472191b4ff0234791718af25}{Wildcard}} = (char)26
+\begin{DoxyCompactList}\small\item\em Represents a wildcard (?) symbol when replacing stack contents. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_aec0745b87eb975303a875b829e8cc412}\label{class_system_1_1_automata_1_1_alphabet_aec0745b87eb975303a875b829e8cc412}} 
+int {\bfseries Count} =$>$ Chars.\+Count
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_afa68a933ddc9aaa35cbeb8aa42ece58c}{Unary}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}1\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em \{1\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a33781b08f0b9a39f1da39ee85fd69fb3}{Binary}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}0\textquotesingle{}, \textquotesingle{}1\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em \{0, 1\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a815270890b0afe881cfa7af15b4a4895}{Decimal}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(48, 10).Select(c =$>$ (char)c).To\+Array())
+\begin{DoxyCompactList}\small\item\em \{0, 1, ..., 9\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a5040c44fbca9ecf1348714c74b848b1d}{Ab}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em \{a, b\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a2c79b315618446cdd7ba875a7924d83f}{Abc}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}, \textquotesingle{}c\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em \{a, b, c\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a6962b8539b792f5b1c00401f45894b58}{Az\+Lower}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(65, 26).Select(c =$>$ (char)c).To\+Array())
+\begin{DoxyCompactList}\small\item\em \{a, b, ..., z\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_ac1b4eaec3c00e63dab2d176773ec84f1}{Az\+Upper}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(97, 26).Select(c =$>$ (char)c).To\+Array())
+\begin{DoxyCompactList}\small\item\em \{A, B, ..., Z\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a090b19b9683fc56693e032edf961313f}{Az\+All}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Az\+Lower.\+Concat(\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_ac1b4eaec3c00e63dab2d176773ec84f1}{Az\+Upper}}).To\+Array())
+\begin{DoxyCompactList}\small\item\em \{a, b, ..., Z\} \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_a8876c9767b18e483848a0f4bc4de2cef}{Ascii}} =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(32, 94).Select(c =$>$ (char)c).To\+Array())
+\begin{DoxyCompactList}\small\item\em All the printable A\+S\+C\+II characters \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_af772a1899e075c880b75bdc12e4fc766}\label{class_system_1_1_automata_1_1_alphabet_af772a1899e075c880b75bdc12e4fc766}} 
+List$<$ char $>$ {\bfseries Chars}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A automaton alphabet 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a890f76aaecd05e71d6ad4518cdb1cbad}\label{class_system_1_1_automata_1_1_alphabet_a890f76aaecd05e71d6ad4518cdb1cbad}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Alphabet@{Alphabet}}
+\index{Alphabet@{Alphabet}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Alphabet()}{Alphabet()}}
+{\footnotesize\ttfamily System.\+Automata.\+Alphabet.\+Alphabet (\begin{DoxyParamCaption}\item[{params char \mbox{[}$\,$\mbox{]}}]{s }\end{DoxyParamCaption})}
+
+
+
+Initialize the alphabet with the given symbols. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The symbols to use.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a5040c44fbca9ecf1348714c74b848b1d}\label{class_system_1_1_automata_1_1_alphabet_a5040c44fbca9ecf1348714c74b848b1d}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Ab@{Ab}}
+\index{Ab@{Ab}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Ab}{Ab}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Ab =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{a, b\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a2c79b315618446cdd7ba875a7924d83f}\label{class_system_1_1_automata_1_1_alphabet_a2c79b315618446cdd7ba875a7924d83f}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Abc@{Abc}}
+\index{Abc@{Abc}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Abc}{Abc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Abc =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}a\textquotesingle{}, \textquotesingle{}b\textquotesingle{}, \textquotesingle{}c\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{a, b, c\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a8876c9767b18e483848a0f4bc4de2cef}\label{class_system_1_1_automata_1_1_alphabet_a8876c9767b18e483848a0f4bc4de2cef}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Ascii@{Ascii}}
+\index{Ascii@{Ascii}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Ascii}{Ascii}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Ascii =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(32, 94).Select(c =$>$ (char)c).To\+Array())\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+All the printable A\+S\+C\+II characters 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a090b19b9683fc56693e032edf961313f}\label{class_system_1_1_automata_1_1_alphabet_a090b19b9683fc56693e032edf961313f}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Az\+All@{Az\+All}}
+\index{Az\+All@{Az\+All}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Az\+All}{AzAll}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Az\+All =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Az\+Lower.\+Concat(\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet_ac1b4eaec3c00e63dab2d176773ec84f1}{Az\+Upper}}).To\+Array())\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{a, b, ..., Z\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a6962b8539b792f5b1c00401f45894b58}\label{class_system_1_1_automata_1_1_alphabet_a6962b8539b792f5b1c00401f45894b58}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Az\+Lower@{Az\+Lower}}
+\index{Az\+Lower@{Az\+Lower}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Az\+Lower}{AzLower}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Az\+Lower =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(65, 26).Select(c =$>$ (char)c).To\+Array())\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{a, b, ..., z\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_ac1b4eaec3c00e63dab2d176773ec84f1}\label{class_system_1_1_automata_1_1_alphabet_ac1b4eaec3c00e63dab2d176773ec84f1}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Az\+Upper@{Az\+Upper}}
+\index{Az\+Upper@{Az\+Upper}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Az\+Upper}{AzUpper}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Az\+Upper =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(97, 26).Select(c =$>$ (char)c).To\+Array())\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{A, B, ..., Z\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a33781b08f0b9a39f1da39ee85fd69fb3}\label{class_system_1_1_automata_1_1_alphabet_a33781b08f0b9a39f1da39ee85fd69fb3}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Binary@{Binary}}
+\index{Binary@{Binary}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Binary}{Binary}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Binary =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}0\textquotesingle{}, \textquotesingle{}1\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{0, 1\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a16131b03673f7d6389ca4ac943881848}\label{class_system_1_1_automata_1_1_alphabet_a16131b03673f7d6389ca4ac943881848}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Blank@{Blank}}
+\index{Blank@{Blank}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Blank}{Blank}}
+{\footnotesize\ttfamily const char System.\+Automata.\+Alphabet.\+Blank = (char)127}
+
+
+
+Represents a blank symbol on a Turing tape. 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a815270890b0afe881cfa7af15b4a4895}\label{class_system_1_1_automata_1_1_alphabet_a815270890b0afe881cfa7af15b4a4895}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Decimal@{Decimal}}
+\index{Decimal@{Decimal}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Decimal}{Decimal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Decimal =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(Enumerable.\+Range(48, 10).Select(c =$>$ (char)c).To\+Array())\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{0, 1, ..., 9\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_aa3f8c16de4596ed24f2fe0fb77e7493c}\label{class_system_1_1_automata_1_1_alphabet_aa3f8c16de4596ed24f2fe0fb77e7493c}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Empty\+String@{Empty\+String}}
+\index{Empty\+String@{Empty\+String}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Empty\+String}{EmptyString}}
+{\footnotesize\ttfamily const char System.\+Automata.\+Alphabet.\+Empty\+String = \textquotesingle{}\textbackslash{}0\textquotesingle{}}
+
+
+
+Represents a string of length 0 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_afa68a933ddc9aaa35cbeb8aa42ece58c}\label{class_system_1_1_automata_1_1_alphabet_afa68a933ddc9aaa35cbeb8aa42ece58c}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Unary@{Unary}}
+\index{Unary@{Unary}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Unary}{Unary}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} System.\+Automata.\+Alphabet.\+Unary =$>$ new \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}(\textquotesingle{}1\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\{1\} 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a8aa33ab3472191b4ff0234791718af25}\label{class_system_1_1_automata_1_1_alphabet_a8aa33ab3472191b4ff0234791718af25}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Wildcard@{Wildcard}}
+\index{Wildcard@{Wildcard}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Wildcard}{Wildcard}}
+{\footnotesize\ttfamily const char System.\+Automata.\+Alphabet.\+Wildcard = (char)26}
+
+
+
+Represents a wildcard (?) symbol when replacing stack contents. 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_alphabet_a1c103a38506cc7b398a6974baa5ead67}\label{class_system_1_1_automata_1_1_alphabet_a1c103a38506cc7b398a6974baa5ead67}} 
+\index{System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}!Z@{Z}}
+\index{Z@{Z}!System\+::\+Automata\+::\+Alphabet@{System\+::\+Automata\+::\+Alphabet}}
+\subsubsection{\texorpdfstring{Z}{Z}}
+{\footnotesize\ttfamily const char System.\+Automata.\+Alphabet.\+Z = (char)3}
+
+
+
+Represents the initial symbol on the stack. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Alphabet.\+cs\end{DoxyCompactItemize}

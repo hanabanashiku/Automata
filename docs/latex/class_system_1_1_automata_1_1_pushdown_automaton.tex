@@ -1,0 +1,93 @@
+\hypertarget{class_system_1_1_automata_1_1_pushdown_automaton}{}\section{System.\+Automata.\+Pushdown\+Automaton Class Reference}
+\label{class_system_1_1_automata_1_1_pushdown_automaton}\index{System.\+Automata.\+Pushdown\+Automaton@{System.\+Automata.\+Pushdown\+Automaton}}
+
+
+A deterministic pushdown automaton utilizing a stack.  
+
+
+Inheritance diagram for System.\+Automata.\+Pushdown\+Automaton\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_system_1_1_automata_1_1_pushdown_automaton}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_automaton_a5cfa8067f1080fe92500ed5eb4edf147}{Pushdown\+Automaton}} (\mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}} q, \mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}} a, \mbox{\hyperlink{class_system_1_1_automata_1_1_stack_alphabet}{Stack\+Alphabet}} g, \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition_function}{Pushdown\+Transition\+Function}} d, \mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} q0, \mbox{\hyperlink{class_system_1_1_automata_1_1_accepting_states}{Accepting\+States}} f)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_automaton_ad54cf243b35b8991faa785678e1f069a}\label{class_system_1_1_automata_1_1_pushdown_automaton_ad54cf243b35b8991faa785678e1f069a}} 
+bool {\bfseries Run} (char\mbox{[}$\,$\mbox{]} x)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_automaton_a4d60ea20931e7b80526ce0105d9b667a}\label{class_system_1_1_automata_1_1_pushdown_automaton_a4d60ea20931e7b80526ce0105d9b667a}} 
+bool {\bfseries Run} (string x)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_stack_alphabet}{Stack\+Alphabet}} \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_automaton_ac6e0b6accb2e2da48f0d6b4179714e15}{Stack\+Alphabet}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The stack alphabet. \end{DoxyCompactList}\item 
+new \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition_function}{Pushdown\+Transition\+Function}} \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_automaton_a2f4b67078bb3b628ff512fc5db396269}{Transitions}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The transition function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A deterministic pushdown automaton utilizing a stack. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_automaton_a5cfa8067f1080fe92500ed5eb4edf147}\label{class_system_1_1_automata_1_1_pushdown_automaton_a5cfa8067f1080fe92500ed5eb4edf147}} 
+\index{System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}!Pushdown\+Automaton@{Pushdown\+Automaton}}
+\index{Pushdown\+Automaton@{Pushdown\+Automaton}!System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}}
+\subsubsection{\texorpdfstring{Pushdown\+Automaton()}{PushdownAutomaton()}}
+{\footnotesize\ttfamily System.\+Automata.\+Pushdown\+Automaton.\+Pushdown\+Automaton (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_states}{States}}}]{q,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_alphabet}{Alphabet}}}]{a,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_stack_alphabet}{Stack\+Alphabet}}}]{g,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition_function}{Pushdown\+Transition\+Function}}}]{d,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}}}]{q0,  }\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_accepting_states}{Accepting\+States}}}]{f }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The set of states\\
+\hline
+{\em a} & The language alphabet\\
+\hline
+{\em g} & The stack alphabet\\
+\hline
+{\em d} & The transition function containing \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} and \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition}{Pushdown\+Transition}} objects\\
+\hline
+{\em q0} & The initial state\\
+\hline
+{\em f} & The set of accepting states\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_automaton_ac6e0b6accb2e2da48f0d6b4179714e15}\label{class_system_1_1_automata_1_1_pushdown_automaton_ac6e0b6accb2e2da48f0d6b4179714e15}} 
+\index{System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}!Stack\+Alphabet@{Stack\+Alphabet}}
+\index{Stack\+Alphabet@{Stack\+Alphabet}!System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}}
+\subsubsection{\texorpdfstring{Stack\+Alphabet}{StackAlphabet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_stack_alphabet}{Stack\+Alphabet}} System.\+Automata.\+Pushdown\+Automaton.\+Stack\+Alphabet\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The stack alphabet. 
+
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_pushdown_automaton_a2f4b67078bb3b628ff512fc5db396269}\label{class_system_1_1_automata_1_1_pushdown_automaton_a2f4b67078bb3b628ff512fc5db396269}} 
+\index{System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}!Transitions@{Transitions}}
+\index{Transitions@{Transitions}!System\+::\+Automata\+::\+Pushdown\+Automaton@{System\+::\+Automata\+::\+Pushdown\+Automaton}}
+\subsubsection{\texorpdfstring{Transitions}{Transitions}}
+{\footnotesize\ttfamily new \mbox{\hyperlink{class_system_1_1_automata_1_1_pushdown_transition_function}{Pushdown\+Transition\+Function}} System.\+Automata.\+Pushdown\+Automaton.\+Transitions\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The transition function 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Pushdown\+Automaton.\+cs\end{DoxyCompactItemize}

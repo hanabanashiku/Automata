@@ -1,0 +1,101 @@
+\hypertarget{class_system_1_1_automata_1_1_transition_function}{}\section{System.\+Automata.\+Transition\+Function Class Reference}
+\label{class_system_1_1_automata_1_1_transition_function}\index{System.\+Automata.\+Transition\+Function@{System.\+Automata.\+Transition\+Function}}
+
+
+A deterministic collection of state transition mappings.  
+
+
+Inheritance diagram for System.\+Automata.\+Transition\+Function\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_system_1_1_automata_1_1_transition_function}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a2eb826c0a54140e72ccd5e7f092ec7a4}\label{class_system_1_1_automata_1_1_transition_function_a2eb826c0a54140e72ccd5e7f092ec7a4}} 
+{\bfseries Transition\+Function} (params \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}}\mbox{[}$\,$\mbox{]} t)
+\item 
+void \mbox{\hyperlink{class_system_1_1_automata_1_1_transition_function_a14ad89fa854a2d313381f986d348be88}{Add}} (\mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} t)
+\begin{DoxyCompactList}\small\item\em Add a transition to the function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a73aeeac22367c08bf2dac0068c726a60}\label{class_system_1_1_automata_1_1_transition_function_a73aeeac22367c08bf2dac0068c726a60}} 
+bool {\bfseries Contains} (\mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} t)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a397318c941b1f3b0b349c945f7b71109}\label{class_system_1_1_automata_1_1_transition_function_a397318c941b1f3b0b349c945f7b71109}} 
+bool {\bfseries Exists} (Predicate$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} $>$ p)
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a5ef277ec52104ed77a05056dc6fa1895}\label{class_system_1_1_automata_1_1_transition_function_a5ef277ec52104ed77a05056dc6fa1895}} 
+I\+Enumerator$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} $>$ {\bfseries Get\+Enumerator} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_abcc64a0e83783e95e29985d157d74f6b}\label{class_system_1_1_automata_1_1_transition_function_abcc64a0e83783e95e29985d157d74f6b}} 
+int {\bfseries Count} =$>$ Trans.\+Count
+\item 
+\mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} \mbox{\hyperlink{class_system_1_1_automata_1_1_transition_function_a887174305e7741235859aceff5556bbd}{this\mbox{[}\+State p, char s\mbox{]}}} =$>$ Get(p, s)
+\begin{DoxyCompactList}\small\item\em Get the next state \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a565d701a23b82c6546ce8d5c8fbc7862}\label{class_system_1_1_automata_1_1_transition_function_a565d701a23b82c6546ce8d5c8fbc7862}} 
+List$<$ \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} $>$ {\bfseries Trans}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A deterministic collection of state transition mappings. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a14ad89fa854a2d313381f986d348be88}\label{class_system_1_1_automata_1_1_transition_function_a14ad89fa854a2d313381f986d348be88}} 
+\index{System\+::\+Automata\+::\+Transition\+Function@{System\+::\+Automata\+::\+Transition\+Function}!Add@{Add}}
+\index{Add@{Add}!System\+::\+Automata\+::\+Transition\+Function@{System\+::\+Automata\+::\+Transition\+Function}}
+\subsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily void System.\+Automata.\+Transition\+Function.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}}}]{t }\end{DoxyParamCaption})}
+
+
+
+Add a transition to the function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The transition to add\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Reference\+Exception} & If a transition has a null state\\
+\hline
+{\em Argument\+Exception} & If a null transition (using Empty\+String) was added\\
+\hline
+\end{DoxyExceptions}
+
+
+Not thread safe! Do not use after adding the function to an automaton.
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_system_1_1_automata_1_1_transition_function_a887174305e7741235859aceff5556bbd}\label{class_system_1_1_automata_1_1_transition_function_a887174305e7741235859aceff5556bbd}} 
+\index{System\+::\+Automata\+::\+Transition\+Function@{System\+::\+Automata\+::\+Transition\+Function}!this\mbox{[}\+State p, char s\mbox{]}@{this[State p, char s]}}
+\index{this\mbox{[}\+State p, char s\mbox{]}@{this[State p, char s]}!System\+::\+Automata\+::\+Transition\+Function@{System\+::\+Automata\+::\+Transition\+Function}}
+\subsubsection{\texorpdfstring{this[State p, char s]}{this[State p, char s]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} System.\+Automata.\+Transition\+Function.\+this\mbox{[}\mbox{\hyperlink{class_system_1_1_automata_1_1_state}{State}} p, char s\mbox{]} =$>$ Get(p, s)}
+
+
+
+Get the next state \mbox{\hyperlink{class_system_1_1_automata_1_1_transition}{Transition}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The current state\\
+\hline
+{\em s} & The current input character\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+System.\+Automata/Transition\+Function.\+cs\end{DoxyCompactItemize}
