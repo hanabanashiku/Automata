@@ -44,17 +44,17 @@ MultitapeTuringMachine(States q, Alphabet a, TapeAlphabet g, MultitapeTuringTran
 
 ## Example
 Let L be the language of binary numbers that are divisible by 3 (i.e. nmod3 = 0).
-Let M = (Q, S, d, q0, F) be a finite automaton such that L(M) = L, where
-Q = {q0, q1, q2},
-S = {0, 1},
-F = {q0},
-d = QxS -> Q = {
-  (q0, 0) = q0
-  (q0, 1) = q1,
-  (q1, 0) = q2,
-  (q1, 1) = q0,
-  (q2, 0) = q1,
-  (q2, 0) = q2
+Let M = (Q, S, d, q0, F) be a finite automaton such that L(M) = L, where <br/>
+Q = {q0, q1, q2}, <br/>
+S = {0, 1}, <br/>
+F = {q0}, <br/>
+d = QxS -> Q = { <br/>
+(q0, 0) = q0, <br/>
+  (q0, 1) = q1, <br/>
+  (q1, 0) = q2, <br/>
+  (q1, 1) = q0, <br/>
+  (q2, 0) = q1, <br/>
+  (q2, 0) = q2 <br/>
  }
  
 We may directly translate the above definition into the following code:
@@ -64,10 +64,10 @@ var f = new AcceptingStates(q[0]);
 var tf = new TransitionFunction() {
   new Transition(q[0], '0', q[0]),
   new Transition(q[0], '1', q[1]),
-	new Transition(q[1], '1', q[0]),
-	new Transition(q[1], '0', q[2]),
-	new Transition(q[2], '0', q[1]),
-	new Transition(q[2], '1', q[2])
+  new Transition(q[1], '1', q[0]),
+  new Transition(q[1], '0', q[2]),
+  new Transition(q[2], '0', q[1]),
+  new Transition(q[2], '1', q[2])
 };
 var m = new FiniteAutomaton(q, Alphabet.Binary, tf, q[0], f);
  ```
